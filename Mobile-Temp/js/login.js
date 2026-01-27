@@ -1,21 +1,48 @@
 $(function () {
   "use strict";
 
-  const eyeBtn = $(".eye-btn");
-  
-  if (eyeBtn.length !== 0) {
-    eyeBtn.on("click", function (e) {
+  const loginForm = $("#loginForm");
+  const loginError = $("#login-error");
+
+  $(document).on("click", ".eye-btn", function (e) {
+    e.preventDefault();
+    const input = $(this).siblings(".form-input");
+    const icon = $(this).find("i");
+
+    if (input.attr("type") === "password") {
+      input.attr("type", "text");
+      icon.removeClass("fa-eye-slash").addClass("fa-eye");
+    } else {
+      input.attr("type", "password");
+      icon.removeClass("fa-eye").addClass("fa-eye-slash");
+    }
+  });
+
+  // Clear errors when user types
+  $(".form-input").on("input", function() {
+    $(this).removeClass("input-error");
+    loginError.fadeOut(200);
+  });
+
+  if (loginForm.length !== 0) {
+    loginForm.on("submit", function (e) {
       e.preventDefault();
 
-      const input = $(this).prev(".form-input");
-      const icon = $(this).find("i");
+      const email = $('input[name="email"]').val().trim();
+      const password = $('input[name="password"]').val().trim();
 
-      if (input.attr("type") === "password") {
-        input.attr("type", "text");
-        icon.removeClass("fa-eye-slash").addClass("fa-eye");
+      // MOCK DATA
+      if (email === "test@test.com" && password === "123456") {
+        
+        $(".login-card").addClass("card-exit");
+        
+        setTimeout(function () {
+          window.location.href = "home.html";
+        }, 500);
+
       } else {
-        input.attr("type", "password");
-        icon.removeClass("fa-eye").addClass("fa-eye-slash");
+        loginError.fadeIn(300);
+        $(".form-input").addClass("input-error");
       }
     });
   }

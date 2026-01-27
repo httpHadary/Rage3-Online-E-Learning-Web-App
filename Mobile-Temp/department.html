@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar-eg" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Rage3 Online</title>
+    <!-- Fontawesome font file css -->
+    <link rel="stylesheet" href="css/font-awesome/css/all.min.css" />
+    <!-- Template global css file. Requared all pages -->
+    <link rel="stylesheet" href="css/global.style.css" />
+    <link rel="stylesheet" href="css/pages/department.css" />
+  </head>
+
+  <body>
+    <main class="app">
+      <div class="top-brand">
+        <a href="register.html" class="back">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </a>
+
+        <img src="img/Hadary/Logo1.png" alt="Rage3 Online logo" class="brand-logo" />
+      </div>
+
+      <div class="login-card">
+        <div class="selection-scroll-area">
+          
+          <div class="selection-group">
+            <label class="group-label">الصفوف</label>
+
+            <div class="options-grid" id="grade-options">
+              <button type="button" class="opt-btn" data-value="1">الأول الثانوي</button>
+              <button type="button" class="opt-btn" data-value="2">الثاني الثانوي</button>
+              <button type="button" class="opt-btn active" data-value="3">الثالث الثانوي</button>
+            </div>
+            
+          </div>
+
+          <div class="selection-group">
+            <label class="group-label">الشعبة</label>
+
+            <div class="options-grid" id="section-options"></div>
+
+          </div>
+
+          <div class="selection-group">
+            <label class="group-label">اللغة الثانية</label>
+
+            <div class="options-grid" id="sec-lang-options">
+              <button type="button" class="opt-btn active" data-value="french">فرنساوي</button>
+              <button type="button" class="opt-btn" data-value="german">ألماني</button>
+            </div>
+
+          </div>
+
+          <div class="selection-group">
+            <label class="group-label">الترم</label>
+
+            <div class="options-grid" id="term-options">
+              <button type="button" class="opt-btn active" data-value="1">الأول</button>
+              <button type="button" class="opt-btn" data-value="2">الثاني</button>
+            </div>
+
+          </div>
+
+          <div class="selection-group">
+            <label class="group-label">اللغة</label>
+
+            <div class="options-grid" id="lang-options">
+              <button type="button" class="opt-btn active" data-value="1">عربى</button>
+              <button type="button" class="opt-btn" data-value="2">لغات</button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="footer-area">
+          <button type="button" class="btn-submit" id="save-department">حفظ</button>
+        </div>
+      </div>
+
+    </main>
+
+    <!--Page loader DOM Elements. Requared all pages-->
+    <div class="sweet-loader">
+      <div class="box">
+        <img
+          src="img/Hadary/Logo.jpg"
+          width="200"
+          height="140"
+          alt="Rage3 Online logo"
+          class="logo smooth"
+        />
+      </div>
+    </div>
+
+    <!-- JQuery library file. requared all pages -->
+    <script src="plugins/jquery-3.2.1.min.js"></script>
+    <!-- Template global script file. requared all pages -->
+    <script src="js/global.script.js"></script>
+    <script src="js/department.js" defer></script>
+  </body>
+</html>

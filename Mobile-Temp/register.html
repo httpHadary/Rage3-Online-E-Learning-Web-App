@@ -22,28 +22,34 @@
 
         <form class="form" id="registerForm">
           <div class="input-group">
-            <input type="text" placeholder="الاسم بالكامل*" class="form-input" required />
+            <input type="text" name="fullName" placeholder="الاسم بالكامل*" class="form-input" required />
           </div>
 
           <div class="input-group">
-            <input type="email" placeholder="البريد الالكتروني*" class="form-input" required />
+            <input type="email" name="email" placeholder="البريد الالكتروني*" class="form-input" required />
+            <span class="field-error" id="email-error">هذا البريد مسجل بالفعل</span>
           </div>
 
           <div class="input-group">
-            <input type="text" placeholder="رقم الهاتف*" class="form-input" required />
+            <input type="text" name="phoneNumber" placeholder="رقم الهاتف*" class="form-input" required />
+            <span class="field-error" id="phone-error">رقم الهاتف مسجل بالفعل</span>
           </div>
 
           <div class="input-group">
-            <input type="password" placeholder="كلمة السر (لا تقل عن 6 أحرف)*" class="form-input" required />
+            <input type="password" name="password" placeholder="كلمة السر (لا تقل عن 6 أحرف)*" class="form-input" required />
             <button type="button" class="eye-btn"><i class="fas fa-eye-slash"></i></button>
           </div>
 
           <div class="input-group">
-            <input type="password" placeholder="تأكيد كلمة السر*" class="form-input" required />
+            <input type="password" name="confirmPassword" placeholder="تأكيد كلمة السر*" class="form-input" required />
             <button type="button" class="eye-btn"><i class="fas fa-eye-slash"></i></button>
           </div>
 
-          <button type="submit" class="btn-submit">التسجيل</button>
+          <p id="error-message" style="color: #ffffff; font-size: 0.8rem; margin: -5px 10px 5px 0; display: none; text-align: right;">
+             كلمات المرور غير متطابقة!
+          </p>
+
+          <button type="submit" class="btn-submit">اختيار الصف الدراسى و الشعبة</button>
         </form>
 
         <div class="footer-area">
