@@ -396,3 +396,57 @@ body {
   right: 5px !important;
   left: auto !important;
 }
+
+/* ===============================
+   Page Entrance Animations
+=============================== */
+
+/* Initial hidden state */
+.app {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: pageEnter 0.8s ease forwards;
+}
+
+/* Navbar animation */
+.navbar {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: navEnter 0.6s ease forwards;
+  animation-delay: 0.1s;
+}
+
+/* Sections animation */
+.best-terms,
+.best-courses,
+.home-banner {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Active animation class */
+.animate-in {
+  animation: sectionEnter 0.7s ease forwards;
+}
+
+/* Keyframes */
+@keyframes pageEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sectionEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

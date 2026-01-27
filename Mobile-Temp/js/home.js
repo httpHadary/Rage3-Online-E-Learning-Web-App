@@ -83,3 +83,21 @@ $(function () {
   });
 
 });
+
+
+/* ===============================
+   Page Load Animations
+=============================== */
+$(window).on("load", function () {
+
+  const sections = document.querySelectorAll(
+    ".home-banner, .best-terms, .best-courses"
+  );
+
+  sections.forEach((section, index) => {
+    setTimeout(() => {
+      section.classList.add("animate-in");
+    }, index * 180); // stagger delay
+  });
+
+});
