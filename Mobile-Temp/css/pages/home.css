@@ -1,8 +1,139 @@
+/* --- Global Variables --- */
+:root {
+  --main-teal: #3ba3b5;
+  --dark-teal: #2d818f;
+  --bg-white: #ffffff;
+  --bg-soft: #f0f2f5;
+  --text-white: #ffffff;
+  --radius: 12px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-white);
+  margin: 0;
+  padding: 0; /* Reset body padding */
+  font-family: sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* --- 1. Fixed Top Bar --- */
+.navbar.themed-top-bar {
+  position: relative;
+  height: 80px; 
+  width: 100%; /* Ensure full width */
+  background: linear-gradient(135deg, var(--main-teal), var(--dark-teal));
+  border-radius: 0 0 40px 40px; 
+  padding: 0 15px; /* Balanced padding */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  border: none;
+  margin: 0; /* Reset any margins */
+}
+
+.nav-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+/* Side Groups ensure the center stays center */
+.nav-side-group {
+  flex: 1; /* Both sides take equal space */
+  display: flex;
+  align-items: center;
+}
+
+.nav-side-group.right {
+  justify-content: flex-end;
+}
+
+/* Logo Centering Fix */
+.top-logo {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-logo img {
+  height: 70px; /* Adjusted for better fit in 80px bar */
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.top-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Button Styling */
+.menu-trigger, .action-btn {
+  color: white;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.2);
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.menu-trigger:hover, .action-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Background Effects */
+.bar-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.bar-effects::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  top: -30px;
+  left: 20%;
+}
+
+.bar-effects::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, white 0.8px, transparent 0.8px);
+  background-size: 30px 30px;
+  opacity: 0.12;
+}
+
+/* --- 2. Content Layout --- */
 .content {
   padding-top: 1.5rem;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
-/* Start of Home Banner */
+
+/* --- 3. Home Banner --- */
 .home-banner .banner-item {
   position: relative;
   display: flex;
@@ -11,19 +142,21 @@
   align-items: center;
   border-radius: calc(var(--radius) * 2);
   overflow: hidden;
-  background-color: var(--main-color);
+  background-color: var(--main-teal);
+  box-shadow: var(--shadow-sm);
 }
+
 .home-banner .banner-item img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
-/* End of Home Banner */
 
-/* Start of Best Terms */
+/* --- 4. Best Terms (Stages) --- */
 .best-terms {
   padding: 0.25rem;
 }
+
 .terms-wrapper .term-item {
   display: flex;
   flex-direction: column;
@@ -31,54 +164,65 @@
   align-items: center;
   overflow: hidden;
   border-radius: calc(var(--radius) * 2);
-  background-color: var(--light);
+  background-color: var(--bg-white);
   box-shadow: var(--shadow-sm);
+  border: 1px solid #eee;
 }
+
 .terms-wrapper .term-item .image {
   height: 120px;
+  width: 100%;
   overflow: hidden;
 }
+
 .terms-wrapper .term-item .image img {
-  width: auto;
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .terms-wrapper .term-item .term-item-content {
   width: 100%;
   padding: 0.5rem;
   text-align: center;
-  background-color: var(--light);
 }
+
 .terms-wrapper .term-item .term-item-content .title {
   margin-top: 0;
   margin-bottom: 0.25rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: var(--main-color);
+  color: var(--main-teal);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.terms-wrapper .term-item .term-item-content .courses {
+
+.terms-wrapper .term-item .term-item-content .courses, .teacher{
   margin-top: 0;
   margin-bottom: 0;
-  background-color: var(--alt-color);
-  color: var(--main-color);
-  font-size: 1rem;
+  background-color: var(--bg-soft);
+  color: var(--main-teal);
+  font-size: 0.9rem;
   font-weight: 700;
-  padding-top: 0.1rem;
-  padding-bottom: 0.1rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
+  display: inline-block;
 }
-/* End of Best Terms */
 
-/* Start of Best Courses in Term */
+/* --- 5. Best Courses --- */
 .best-courses {
   padding: 0.25rem;
 }
+
 .courses-wrapper .course-item {
   display: flex;
   flex-direction: column;
+  background-color: var(--bg-white);
+  border-radius: var(--radius);
+  overflow: hidden;
 }
+
 .courses-wrapper .course-item .image {
   display: flex;
   height: 100px;
@@ -87,48 +231,168 @@
   border-radius: var(--radius);
   margin-bottom: 0.5rem;
 }
+
 .courses-wrapper .course-item .image img {
   object-fit: cover;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
+
 .courses-wrapper .course-item .course-item-content {
   padding: 0.5rem;
-  background-color: var(--light);
 }
+
 .courses-wrapper .course-item .course-item-content .title {
   margin-top: 0;
   margin-bottom: 0.25rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  color: var(--main-color);
-  min-height: 45px;
+  color: var(--main-teal);
+  min-height: 40px;
   overflow: hidden;
-  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
 .courses-wrapper .course-item .course-item-content .teacher {
   margin-top: 0;
   margin-bottom: 0.25rem;
-  font-size: 1rem;
-  color: var(--dark);
+  font-size: 0.85rem;
+  color: #666;
 }
-.courses-wrapper .course-item .course-item-content .price {
-  margin-top: 0;
-  margin-bottom: 0;
-  background-color: var(--alt-color);
-  color: var(--main-color);
-  font-weight: 700;
-  font-size: 1.25rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-/* End of Best Courses in Term */
 
-/* Remove Later */
-.navbar {
-  padding: 0.5rem 1rem;
+.courses-wrapper .course-item .course-item-content .price {
+  margin-top: 5px;
+  margin-bottom: 0;
+  background-color: var(--main-teal);
+  color: var(--text-white);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* --- 6. Section Headings --- */
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0 5px;
+}
+
+.heading-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--main-teal);
+  margin: 0;
+}
+
+.section-action {
+  color: var(--main-teal);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+/* --- 7. Bottom Navigation --- */
+.bottom-navigation {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: var(--main-teal);
+  border-radius: 25px 25px 0 0;
+  padding: 10px 0;
+  z-index: 100;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+}
+
+.bottom-navigation .container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.buttom-nav-link {
+  text-align: center;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.buttom-nav-link {
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+  padding: 6px 12px;
+  border-radius: 14px;
+}
+
+/* Active item background */
+.buttom-nav-link.active {
+  background: linear-gradient(135deg, #ffffff, #e6f4f7);
+  color: var(--dark-teal);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  transform: translateY(-3px);
+}
+
+/* Active icon color */
+.buttom-nav-link.active .nav-icon {
+  color: var(--dark-teal);
+}
+
+/* Hover effect (optional but beautiful) */
+.buttom-nav-link:hover {
+  color: var(--text-white);
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.buttom-nav-link span {
+  font-size: 0.7rem;
+  display: block;
+}
+
+/* --- Swiper Custom Navigation --- */
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: var(--main-teal) !important; /* Teal background */
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  transition: 0.3s ease;
+}
+
+/* Make the arrows white and smaller */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #ffffff !important; 
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: var(--dark-teal) !important;
+  transform: scale(1.1);
+}
+/* RTL positioning fix */
+.swiper-button-next {
+  left: 5px !important;
+  right: auto !important;
+}
+
+.swiper-button-prev {
+  right: 5px !important;
+  left: auto !important;
 }
