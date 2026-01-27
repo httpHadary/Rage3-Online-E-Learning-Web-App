@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes"
+    /> -->
+    <title>سودانت</title>
+    <!-- Fontawesome font file css -->
+    <link rel="stylesheet" href="css/font-awesome/css/all.min.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.rtl.min.css" />
+    <!-- Template global css file. Requared all pages -->
+    <link rel="stylesheet" href="css/global.style.css" />
+    <link rel="stylesheet" href="css/pages/exam.css" />
+  </head>
+  <body>
+    <main class="app pb-4">
+      <!-- Start of Timer -->
+      <div class="navbar">
+        <div class="container">
+          <div class="text-truncate">
+            <h1 class="text-main h4 mb-0">
+              اللغة العربية - الصف الاول الابتدائي
+            </h1>
+            <p class="mb-0 lh-1">مدة الامتحان 10 دقائق</p>
+          </div>
+          <div class="timer-wrapper">
+            <div id="countdown"></div>
+            <input
+              type="hidden"
+              name="count-down-time"
+              id="countDownTime"
+              value="20"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- End of Timer -->
+
+      <div class="content">
+        <!-- Start of Linear Progress -->
+        <div class="progress">
+          <div
+            class="progress-bar"
+            id="currentProgress"
+            role="progressbar"
+            aria-label="questions progress"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+        <div class="container mb-3 py-1">
+          <div id="stepsNumber">1 / 3</div>
+        </div>
+        <!-- End of Linear Progress -->
+
+        <!-- Start of Qustions -->
+        <div class="container">
+          <div id="questionsStepper" class="mb-3">
+            <!-- Start of Question -->
+            <h2 class="d-none">1 Question</h2>
+            <section class="question-wrapper">
+              <div class="image">
+                <img
+                  src="img/exam/question-1.jpg"
+                  width="320"
+                  height="241"
+                  alt=""
+                />
+              </div>
+              <h3 class="h4 mb-2 text-main">اختار الاجابة الصحيحة:</h3>
+              <ul class="answers">
+                <li class="answer-item">الاختيار الاول</li>
+                <li class="answer-item">الاختيار الثاني</li>
+                <li class="answer-item">الاختيار الثالث</li>
+                <li class="answer-item">الاختيار الرابع</li>
+              </ul>
+            </section>
+            <!-- End of Question -->
+
+            <!-- Start of Question -->
+            <h2 class="d-none">2 Question</h2>
+            <section class="question-wrapper">
+              <div class="image">
+                <img
+                  src="img/exam/question-2.jpg"
+                  width="320"
+                  height="241"
+                  alt=""
+                />
+              </div>
+              <h3 class="h4 mb-2 text-main">اختار الاجابة الصحيحة:</h3>
+              <ul class="answers">
+                <li class="answer-item">الاختيار الاول</li>
+                <li class="answer-item">الاختيار الثاني</li>
+                <li class="answer-item">الاختيار الثالث</li>
+                <li class="answer-item">الاختيار الرابع</li>
+              </ul>
+            </section>
+            <!-- End of Question -->
+
+            <!-- Start of Question -->
+            <h2 class="d-none">3 Question</h2>
+            <section class="question-wrapper">
+              <div class="image">
+                <img
+                  src="img/exam/question-3.png"
+                  width="320"
+                  height="241"
+                  alt=""
+                />
+              </div>
+              <h3 class="h4 mb-2 text-main">اختار الاجابة الصحيحة:</h3>
+              <ul class="answers">
+                <li class="answer-item">الاختيار الاول</li>
+                <li class="answer-item">الاختيار الثاني</li>
+                <li class="answer-item">الاختيار الثالث</li>
+                <li class="answer-item">الاختيار الرابع</li>
+              </ul>
+            </section>
+            <!-- End of Question -->
+          </div>
+
+          <!-- Start of Next | Prev | Finish Actions -->
+          <div class="d-flex justify-content-between align-items-center">
+            <button type="button" class="btn btn-prev btn-dark" id="prevStep">
+              السابق
+            </button>
+            <div
+              class="d-flex align-items-center flex-grow-1 justify-content-end"
+            >
+              <button
+                type="button"
+                class="btn btn-main btn-next show"
+                id="nextStep"
+                disabled
+              >
+                التالى
+              </button>
+              <a
+                href="#"
+                role="button"
+                class="btn btn-next btn-alt finish"
+                id="finishGame"
+                >Finish</a
+              >
+            </div>
+          </div>
+          <!-- End of Next | Prev | Finish Actions -->
+        </div>
+        <!-- End of Qustions -->
+      </div>
+    </main>
+
+    <!-- Exam End Modal -->
+    <div
+      class="modal fade end-exam"
+      id="examEndModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="examEndModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="time-out">
+              <img
+                src="img/glass-hour.gif"
+                width="100"
+                height="100"
+                alt="time out"
+              />
+              <p class="mb-0 lead text-center text-main">انتهى وقت الامتحان</p>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-alt" id="resumeExam">
+              رجوع
+            </button>
+            <a
+              href="exam-results.html"
+              role="button"
+              class="btn btn-main"
+              id="submitExamAnswers"
+            >
+              انهاء الامتحان
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Page loader DOM Elements. Requared all pages-->
+    <div class="sweet-loader">
+      <div class="box">
+        <img
+          src="img/logo.webp"
+          width="200"
+          height="140"
+          alt="sudanet logo"
+          class="logo smooth"
+        />
+      </div>
+    </div>
+
+    <!-- JQuery library file. requared all pages -->
+    <script src="plugins/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Wizard -->
+    <script src="plugins/jquery.steps.js" defer></script>
+    <!-- Template global script file. requared all pages -->
+    <script src="js/global.script.js"></script>
+    <script src="js/exam.js" defer></script>
+  </body>
+</html>

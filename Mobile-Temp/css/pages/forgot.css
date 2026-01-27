@@ -1,0 +1,177 @@
+:root {
+  --main-teal: #3ba3b5;
+  --bg-white: #ffffff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  direction: rtl;
+  font-family: 'Harmattan', sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  max-height: 850px;
+  background-color: var(--bg-white);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.top-brand {
+  flex: 0 0 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0;
+  overflow: visible;
+}
+
+.back {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  color: var(--main-teal);
+  background-color: transparent;
+  border: 1.5px solid var(--main-teal);
+  border-radius: 50%;
+  text-decoration: none;
+  z-index: 20;
+}
+
+.brand-logo {
+  height: 130%; 
+  width: auto;
+  max-width: 90%;
+  object-fit: contain;
+  transform: scale(1.1);
+}
+
+.login-card {
+  flex: 1;
+  background-color: var(--main-teal);
+  border-radius: 40px 40px 0 0;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  z-index: 10;
+}
+
+.form-header {
+  margin-top: 30px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.form-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1rem;
+  text-align: right;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.btn-submit {
+  background-color: #ffffff;
+  color: var(--main-teal);
+  border: none;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.btn-submit:active {
+  transform: scale(0.98);
+}
+
+/* Synchronized Entrance for Forgot Page */
+.login-card {
+  /* Increased duration from 0.7s to 0.85s to match the "feel" of heavier pages */
+  animation: slideUpForgot 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.brand-logo {
+  /* Matches exactly with Login/Register */
+  animation: popLogo 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Staggered entrance for the header and inputs */
+.form-header, .input-group, .btn-submit {
+  opacity: 0;
+  animation: fadeInStagger 0.6s ease-out forwards;
+}
+
+/* Timing offsets to slow down the "pop-in" effect */
+.form-header { animation-delay: 0.4s; }
+.input-group { animation-delay: 0.55s; }
+.btn-submit  { animation-delay: 0.7s; }
+
+/* 2. Keyframe Definitions (Force sync) */
+@keyframes slideUpForgot {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInStagger {
+  from { 
+    opacity: 0; 
+    transform: translateY(15px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}

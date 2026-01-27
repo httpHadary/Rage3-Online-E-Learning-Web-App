@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="ar-eg" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rage3 Online</title>
+    <!-- Fontawesome font file css -->
+    <link rel="stylesheet" href="css/font-awesome/css/all.min.css" />
+    <!-- Template global css file. Requared all pages -->
+    <link rel="stylesheet" href="css/global.style.css" />
+    <link rel="stylesheet" href="css/pages/login.css" />
+  </head>
+
+  <body>
+    <main class="app">
+      <div class="top-brand">
+        <img src="img/Hadary/Logo1.png" alt="Rage3 Online" class="brand-logo" />
+      </div>
+
+      <div class="login-card">
+        <form class="form" id="loginForm">
+          <div class="input-group">
+            <input type="text" placeholder="البريد الالكتروني*" class="form-input" required />
+          </div>
+
+          <div class="input-group">
+            <input type="password" placeholder="كلمة المرور*" class="form-input" required/>
+            <button type="button" class="eye-btn"><i class="fas fa-eye-slash"></i></button>
+          </div>
+
+          <a href="forgot.html" class="forgot-link">نسيت كلمة المرور؟</a>
+
+          <button type="submit" class="btn-login">تسجيل الدخول</button>
+
+          <div class="separator"><span>أو عن طريق</span></div>
+
+          <button type="button" class="btn-google">
+            <i class="fab fa-google"></i>
+            <span>تسجيل عن طريق جوجل</span>
+          </button>
+        </form>
+
+        <div class="footer-area">
+          <p class="terms">
+            من خلال تسجيل الدخول، فإنك توافق على <b>الشروط والأحكام</b> و <b>سياسة الخصوصية الخاصة بنا</b>.
+          </p>
+
+          <p class="signup-text">
+            ليس لديك حساب؟ <a href="register.html">سجل الآن</a>
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!--Page loader DOM Elements. Requared all pages-->
+    <div class="sweet-loader">
+      <div class="box">
+        <img
+          src="img/Hadary/Logo.jpg"
+          width="200"
+          height="140"
+          alt="Rage3 Online logo"
+          class="logo smooth"
+        />
+      </div>
+    </div>
+
+    <!-- JQuery library file. requared all pages -->
+    <script src="plugins/jquery-3.2.1.min.js"></script>
+    <!-- Template global script file. requared all pages -->
+    <script src="js/global.script.js"></script>
+    <script src="js/login.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+.app, .content {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  position: relative;
+  background-color: #FFFFFF;
+  background-image: url(../../img/Hadary/Landing.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.start {
+  position: absolute;
+  bottom: 50px;
+  width: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background-color: #3ba3b5 !important;
+  color: #ffffff !important;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  border-radius: 15px;
+  border: none;
+  
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1;
+  
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.start:hover {
+  background-color: #328d9c !important;
+  color: #ffffff !important;
+}
+
+.start:active {
+  transform: translateX(-50%) scale(0.98);
+}

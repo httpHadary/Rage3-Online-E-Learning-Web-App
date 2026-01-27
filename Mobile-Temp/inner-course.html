@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes"
+    /> -->
+    <title>سودانت</title>
+    <!-- Fontawesome font file css -->
+    <link rel="stylesheet" href="css/font-awesome/css/all.min.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.rtl.min.css" />
+    <!-- Template global css file. Requared all pages -->
+    <link rel="stylesheet" href="css/global.style.css" />
+    <link rel="stylesheet" href="css/pages/inner-course.css" />
+  </head>
+  <body>
+    <main class="app">
+      <div class="content">
+        <!-- Start of Navbar -->
+        <nav class="navbar">
+          <div class="container gap-1 flex-nowrap">
+            <div class="nav-header">
+              <h1 class="h4 main-title text-truncate mb-1">اسم الكورس</h1>
+              <h2 class="h5 mb-0 text-truncate">اسم الحصة</h2>
+            </div>
+            <a href="course.html">
+              <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
+        </nav>
+        <!-- End of Navbar -->
+
+        <!-- Start of Video -->
+        <div class="custom-video-wrapper" data-video="qaTB_u1THVs">
+          <div class="placeholder">سودانت</div>
+          <div class="video-controls play">
+            <div class="btn-play-wrapper">
+              <button class="btn btn-play">
+                <i class="fas fa-play play-icon flip-x" title="تشغيل"></i>
+                <i class="fas fa-pause pause-icon" title="ايقاف"></i>
+              </button>
+            </div>
+            <input
+              type="range"
+              class="display-progressbar"
+              min="0"
+              max="100"
+              step="1"
+              id="displayProgressBar"
+            />
+            <div class="buttom-controls">
+              <div class="left">
+                <button class="btn-play">
+                  <i class="fas fa-play play-icon flip-x" title="تشغيل"></i>
+                  <i class="fas fa-pause pause-icon" title="ايقاف"></i>
+                </button>
+                <div class="audio on">
+                  <button class="btn-vol flip-x" id="volButton">
+                    <i class="fas fa-volume-up"></i>
+                    <i class="fas fa-volume-mute"></i>
+                  </button>
+                  <input
+                    type="range"
+                    class="form-range"
+                    min="0"
+                    max="5"
+                    step="1"
+                    value="2"
+                    id="volumeRange"
+                  />
+                </div>
+              </div>
+              <div class="right">
+                <p class="mb-0 d-flex align-items-center fs-5 text-white">
+                  <span id="current-time" class="lh-1 me-1">0:00</span> /
+                  <span id="duration" class="lh-1 ms-1">0:00</span>
+                </p>
+                <a
+                  href="toggleFullScreenView.html"
+                  class="full-screen"
+                  id="redirectToFullScreen"
+                >
+                  <i class="fas fa-expand"></i>
+                  <i class="fas fa-compress"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div id="player" class="iframe-player"></div>
+          <div class="overlay"></div>
+        </div>
+        <!-- End of Video -->
+
+        <!-- Start of Video List -->
+        <ul class="videos-list-wrappers mb-3">
+          <li class="video-list-item active" data-videoId="qaTB_u1THVs">
+            اسم الفيديو الاول
+          </li>
+          <li class="video-list-item" data-videoId="UYlOHRmffXU">
+            اسم الفيديو الثاني
+          </li>
+          <li class="video-list-item" data-videoId="DlSk1G4FXuU">
+            اسم الفيديو الثالث
+          </li>
+          <li class="video-list-item" data-videoId="mx8X4uV-g-I">
+            اسم الفيديو الرابع
+          </li>
+          <li class="video-list-item" data-videoId="qaTB_u1THVs">
+            اسم الفيديو الخامس
+          </li>
+          <li class="video-list-item" data-videoId="UYlOHRmffXU">
+            اسم الفيديو السادس
+          </li>
+          <li class="video-list-item" data-videoId="DlSk1G4FXuU">
+            اسم الفيديو السابع
+          </li>
+          <li class="video-list-item" data-videoId="mx8X4uV-g-I">
+            اسم الفيديو الثامن
+          </li>
+        </ul>
+        <!-- End of Video List -->
+
+        <!-- Start of button trigger -->
+        <button
+          class="btn btn-quiz-trigger"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#quizCotentCanvas"
+          aria-controls="quizCotentCanvas"
+        >
+          المحتوى التعليمي <span class="vr"></span> الامتحانات
+        </button>
+        <!-- End of button trigger -->
+      </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-navigation">
+      <div class="container">
+        <a href="home.html" class="buttom-nav-link">
+          <i class="fas fa-home nav-icon"></i>
+          <span>الرئيسية</span>
+        </a>
+        <a href="stages.html" class="buttom-nav-link">
+          <i class="fas fa-th-large nav-icon"></i>
+          <span>المراحل التعليمية</span>
+        </a>
+        <a href="stage-courses.html" class="buttom-nav-link">
+          <i class="fas fa-book nav-icon"></i>
+          <span>المواد</span>
+        </a>
+        <a href="profile.html" class="buttom-nav-link">
+          <i class="fas fa-user nav-icon"></i>
+          <span>حسابك</span>
+        </a>
+        <a href="about.html" class="buttom-nav-link">
+          <i class="fas fa-info nav-icon"></i>
+          <span>معلومات عنا</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Start of Quizes & PDF offcanvas -->
+    <div
+      class="offcanvas offcanvas-bottom"
+      tabindex="-1"
+      id="quizCotentCanvas"
+      aria-labelledby="quizCotentCanvasLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="quizCotentCanvasLabel">
+          المحتوى التعليمي <span class="vr"></span> الامتحانات
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body small">
+        <div class="row g-3">
+          <div class="col-12">
+            <h6 class="fw-bold text-dark">تحميل المحتوى</h6>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <a
+                  href="#"
+                  download
+                  class="d-flex justify-content-between align-items-center text-main"
+                >
+                  <span class="fw-bold">الكتاب الاول</span>
+                  <i class="far fa-file-pdf"></i>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a
+                  href="#"
+                  download
+                  class="d-flex justify-content-between align-items-center text-main"
+                >
+                  <span class="fw-bold">الكتاب الثاني</span>
+                  <i class="far fa-file-pdf"></i>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a
+                  href="#"
+                  download
+                  class="d-flex justify-content-between align-items-center text-main"
+                >
+                  <span class="fw-bold">الكتاب الثالث</span>
+                  <i class="far fa-file-pdf"></i>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a
+                  href="#"
+                  download
+                  class="d-flex justify-content-between align-items-center text-main"
+                >
+                  <span class="fw-bold">الكتاب الرابع</span>
+                  <i class="far fa-file-pdf"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12">
+            <h6 class="fw-bold text-dark">الامتحانات</h6>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <a
+                  href="ready-for-exam.html"
+                  class="d-flex justify-content-between align-items-center text-main"
+                >
+                  <span class="fw-bold">الامتحان الاول</span>
+                  <i class="far fa-question-circle flip-x"></i>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a
+                  href="ready-for-exam.html"
+                  class="d-flex justify-content-between align-items-center text-main"
+                >
+                  <span class="fw-bold">الامتحان الثاني</span>
+                  <i class="far fa-question-circle flip-x"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Quizes & PDF offcanvas -->
+
+    <!--Page loader DOM Elements. Requared all pages-->
+    <div class="sweet-loader">
+      <div class="box">
+        <img
+          src="img/logo.webp"
+          width="200"
+          height="140"
+          alt="sudanet logo"
+          class="logo smooth"
+        />
+      </div>
+    </div>
+
+    <!-- JQuery library file. requared all pages -->
+    <script src="plugins/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Template global script file. requared all pages -->
+    <script src="js/global.script.js"></script>
+    <script src="js/inner-course.js" defer></script>
+  </body>
+</html>

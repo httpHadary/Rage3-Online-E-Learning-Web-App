@@ -1,0 +1,19 @@
+.content {
+  padding-bottom: 60px;
+}
+/* Start of Banner */
+.banner {
+  width: 100%;
+  height: 35vh;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+/* End of Banner */
+.box-shadow {
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius);
+}
+.border-alt {
+  border-color: var(--alt-color) !important;
+}

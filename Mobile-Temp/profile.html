@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes"
+    /> -->
+    <title>سودانت</title>
+    <!-- Fontawesome font file css -->
+    <link rel="stylesheet" href="css/font-awesome/css/all.min.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.rtl.min.css" />
+    <!-- Swiper Slider -->
+    <link rel="stylesheet" href="plugins/swiper/swiper-bundle.min.css" />
+    <!-- Template global css file. Requared all pages -->
+    <link rel="stylesheet" href="css/global.style.css" />
+    <link rel="stylesheet" href="css/pages/profile.css" />
+  </head>
+  <body>
+    <main class="app">
+      <!-- Start of Navbar -->
+      <nav class="navbar">
+        <div class="container gap-1 flex-nowrap">
+          <a href="home.html">
+            <img src="img/logo.webp" width="70" height="50" alt="logo" />
+          </a>
+          <a href="home.html">
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </nav>
+      <!-- End of Navbar -->
+
+      <!-- Start of Page Content -->
+      <div class="content">
+        <div class="container py-3">
+          <!-- Swiper Trigger -->
+          <div
+            class="swiper profile-trigger-swiper mb-4"
+            id="profileTriggerSwiper"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <button class="btn btn-trigger">
+                  <i class="fas fa-user"></i>
+                  <span class="label">معلومات الحساب</span>
+                </button>
+              </div>
+
+              <div class="swiper-slide">
+                <button class="btn btn-trigger">
+                  <i class="fas fa-unlock-alt"></i>
+                  <span class="label">تغيير كلمة المرور</span>
+                </button>
+              </div>
+
+              <div class="swiper-slide">
+                <button class="btn btn-trigger">
+                  <i class="fas fa-book"></i>
+                  <span class="label">كورساتك</span>
+                </button>
+              </div>
+
+              <div class="swiper-slide">
+                <button class="btn btn-trigger" id="btnLogout">
+                  <i class="fas fa-sign-out-alt flip-x"></i>
+                  <span class="label">تسجيل الخروج</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+
+          <!-- Swiper Content  -->
+          <div class="swiper profile-swiper" id="profileSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="bg-white p-3">
+                  <div class="mb-4 text-center">
+                    <img
+                      src="img/avatar.webp"
+                      width="70"
+                      height="70"
+                      alt="person avatar"
+                      class="d-block mx-auto rounded-circle mb-3"
+                    />
+                    <h2 class="h3 text-main mb-1">
+                      مرحبا <span>اسم الطالب</span>
+                    </h2>
+                    <p class="mb-0 lead">بامكانك عرض و تعديل بياناتك الشخصية</p>
+                  </div>
+                  <form class="row g-3">
+                    <div class="col-12 col-sm-6">
+                      <input
+                        type="text"
+                        name="user-name"
+                        placeholder="الاسم بالكامل"
+                        value="اسم الطالب"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <input
+                        type="email"
+                        name="user-email"
+                        placeholder="البريد الالكترونى"
+                        value="test@test.com"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <input
+                        type="tel"
+                        name="user-phone"
+                        placeholder="رقم الهاتف"
+                        value="0114567893"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <input
+                        type="tel"
+                        name="user-phone"
+                        placeholder="رقم هاتف ولى الامر"
+                        value="01234556789"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <div class="col-12">
+                      <div
+                        class="d-flex align-items-center gap-3 justify-content-end mt-3"
+                      >
+                        <button class="btn btn-alt" type="submit" disabled>
+                          الغاء
+                        </button>
+                        <button class="btn btn-main" type="submit" disabled>
+                          حفظ التغييرات
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="bg-white p-3">
+                  <div class="mb-4 text-center">
+                    <h2 class="h3 mb-1">كلمة المرور</h2>
+                    <p class="mb-0 lead">بامكانك تعديل كلمة المرور الحالية</p>
+                  </div>
+                  <form action="" class="row g-3">
+                    <div class="col-12">
+                      <div class="custom-form-control password">
+                        <button class="eye-icon">
+                          <i class="fas fa-eye-slash"></i>
+                          <i class="fas fa-eye"></i>
+                        </button>
+                        <input
+                          type="password"
+                          name="current-password"
+                          placeholder="كلمة المرور الحالية"
+                          class="form-input"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="custom-form-control password">
+                        <button class="eye-icon">
+                          <i class="fas fa-eye-slash"></i>
+                          <i class="fas fa-eye"></i>
+                        </button>
+                        <input
+                          type="password"
+                          name="new-password"
+                          placeholder="كلمة المرور الجديدة"
+                          class="form-input"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="custom-form-control password">
+                        <button class="eye-icon">
+                          <i class="fas fa-eye-slash"></i>
+                          <i class="fas fa-eye"></i>
+                        </button>
+                        <input
+                          type="password"
+                          name="confirm-password"
+                          placeholder="تأكيد كلمة المرور الجديدة"
+                          class="form-input"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div
+                        class="d-flex align-items-center gap-3 justify-content-end mt-3"
+                      >
+                        <button class="btn btn-alt" type="submit" disabled>
+                          الغاء
+                        </button>
+                        <button class="btn btn-main" type="submit" disabled>
+                          حفظ التغييرات
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="bg-white p-3">
+                  <div class="mb-4 text-center">
+                    <h2 class="h3 mb-1">كورساتك الحالية</h2>
+                    <p class="mb-0 lead">
+                      بامكانك عرض جميع الكورسات التى تم شراؤها
+                    </p>
+                  </div>
+                  <div class="row g-3">
+                    <div class="col-6">
+                      <a href="course.html" class="course-item">
+                        <div class="image">
+                          <img
+                            data-src="img/courses/s1.png"
+                            src="img/courses/placeholder-210x150.png"
+                            alt="term-1"
+                            width="210"
+                            height="150"
+                            class="lazy"
+                          />
+                        </div>
+                        <div class="course-item-content">
+                          <h3 class="title">الكورس الاول للمرحلة الاولى</h3>
+                          <p class="teacher">المدرس الاول</p>
+                          <p class="price">$ 6</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-6">
+                      <a href="course.html" class="course-item">
+                        <div class="image">
+                          <img
+                            data-src="img/courses/s2.png"
+                            src="img/courses/placeholder-210x150.png"
+                            alt="term-2"
+                            width="210"
+                            height="150"
+                            class="lazy"
+                          />
+                        </div>
+                        <div class="course-item-content">
+                          <h3 class="title">الكورس الثاني للمرحلة الاولى</h3>
+                          <p class="teacher">المدرس الاول</p>
+                          <p class="price">$ 6</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-6">
+                      <a href="course.html" class="course-item">
+                        <div class="image">
+                          <img
+                            data-src="img/courses/s3.png"
+                            src="img/courses/placeholder-210x150.png"
+                            alt="term-3"
+                            width="210"
+                            height="150"
+                            class="lazy"
+                          />
+                        </div>
+                        <div class="course-item-content">
+                          <h3 class="title">الكورس الثالث للمرحلة الاولى</h3>
+                          <p class="teacher">المدرس الاول</p>
+                          <p class="price">$ 12</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-6">
+                      <a href="course.html" class="course-item">
+                        <div class="image">
+                          <img
+                            data-src="img/courses/s4.png"
+                            src="img/courses/placeholder-210x150.png"
+                            alt="term-4"
+                            width="210"
+                            height="150"
+                            class="lazy"
+                          />
+                        </div>
+                        <div class="course-item-content">
+                          <h3 class="title">الكورس الرابع للمرحلة الاولى</h3>
+                          <p class="teacher">المدرس الاول</p>
+                          <p class="price">$ 30</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Page Content -->
+    </main>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-navigation">
+      <div class="container">
+        <a href="home.html" class="buttom-nav-link">
+          <i class="fas fa-home nav-icon"></i>
+          <span>الرئيسية</span>
+        </a>
+        <a href="stages.html" class="buttom-nav-link">
+          <i class="fas fa-th-large nav-icon"></i>
+          <span>المراحل التعليمية</span>
+        </a>
+        <a href="stage-courses.html" class="buttom-nav-link">
+          <i class="fas fa-book nav-icon"></i>
+          <span>المواد</span>
+        </a>
+        <a href="profile.html" class="buttom-nav-link active">
+          <i class="fas fa-user nav-icon"></i>
+          <span>حسابك</span>
+        </a>
+        <a href="about.html" class="buttom-nav-link">
+          <i class="fas fa-info nav-icon"></i>
+          <span>معلومات عنا</span>
+        </a>
+      </div>
+    </div>
+
+    <!--Page loader DOM Elements. Requared all pages-->
+    <div class="sweet-loader">
+      <div class="box">
+        <img
+          src="img/logo.webp"
+          width="200"
+          height="140"
+          alt="sudanet logo"
+          class="logo smooth"
+        />
+      </div>
+    </div>
+
+    <!-- JQuery library file. requared all pages -->
+    <script src="plugins/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Swiper Slider -->
+    <script src="plugins/swiper/swiper-bundle.min.js" defer></script>
+    <!-- LazyLoad Images -->
+    <script src="plugins/lazyload.min.js" defer></script>
+    <!-- Template global script file. requared all pages -->
+    <script src="js/global.script.js"></script>
+    <!-- page script -->
+    <script src="js/profile.js"></script>
+  </body>
+</html>

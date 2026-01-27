@@ -1,0 +1,61 @@
+/* Start of Fonts */
+@font-face {
+  font-family: "Harmattan";
+  src: url("../fonts/Harmattan-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Harmattan";
+  src: url("../fonts/Harmattan-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* End of Fonts */
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Harmattan", sans-serif;
+}
+.row {
+  background: url(../img/intro.png) no-repeat right center;
+  background-size: cover;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+iframe {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 0px;
+  width: 371px;
+  height: 650px;
+  border-radius: 11px;
+}
+.phone {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 370px;
+  height: 650px;
+  border: 7px solid #333;
+  float: left;
+  border-radius: 20px;
+}

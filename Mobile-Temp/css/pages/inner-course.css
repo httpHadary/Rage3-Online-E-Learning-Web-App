@@ -1,0 +1,92 @@
+.content {
+  padding-bottom: 70px;
+}
+/* Start of Navbar */
+.navbar .nav-header {
+  max-width: 90%;
+}
+.navbar .main-title {
+  color: var(--main-color);
+}
+/* End of Navbar */
+
+/* Start of Custom Video Wrapper */
+.custom-video-wrapper {
+  height: calc(100vh - 162px);
+}
+.custom-video-wrapper.full-height {
+  height: 80vh;
+}
+/* End of Custom Video Wrapper */
+
+/* Start of Video List */
+.videos-list-wrappers {
+  background-color: var(--light);
+  overflow-x: auto;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--alt-color);
+}
+.videos-list-wrappers::-webkit-scrollbar {
+  display: none;
+}
+.videos-list-wrappers .video-list-item {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1.1rem;
+  background-color: var(--light);
+  -webkit-transition: background-color 0.2s ease-in-out;
+  -moz-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+}
+.videos-list-wrappers .video-list-item.active {
+  background-color: var(--alt-color);
+  color: var(--main-color);
+}
+.videos-list-wrappers .video-list-item:not(:last-child) {
+  border-left: 1px solid var(--alt-color);
+  margin-right: -3px;
+}
+/* End of Video List */
+
+/* Start of Quiz Trigger Button */
+.btn-quiz-trigger {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--dark);
+  color: var(--light);
+  min-height: 40px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+.btn-quiz-trigger:hover {
+  color: var(--light);
+}
+/* End of Quiz Trigger Button */
+
+/* Start of Offcanvas */
+.offcanvas.offcanvas-bottom {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  overflow: hidden;
+}
+.offcanvas-bottom {
+  height: 50vh;
+}
+.offcanvas-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  color: var(--main-color);
+}
+/* End of Offcanvas */
