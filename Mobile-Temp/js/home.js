@@ -28,9 +28,9 @@ $(function () {
 
 
   /* ===============================
-     2. Terms Swiper
+     2. Stages Swiper
   =============================== */
-  const termsSwiper = new Swiper("[data-swiper='terms']", {
+  const stagesSwiper = new Swiper("[data-swiper='stages']", {
     slidesPerView: 1.5,
     spaceBetween: 20,
     speed: 700,
@@ -45,8 +45,8 @@ $(function () {
       disableOnInteraction: false,
     },
     navigation: {
-      nextEl: ".terms-next",
-      prevEl: ".terms-prev",
+      nextEl: ".stages-next",
+      prevEl: ".stages-prev",
     },
     breakpoints: {
       576: { slidesPerView: 2.5 },
@@ -54,12 +54,38 @@ $(function () {
     },
   });
 
+    /* ===============================
+     3. Subjects Swiper
+  =============================== */
+  const subjectsSwiper = new Swiper("[data-swiper='subjects']", {
+    slidesPerView: 1.5,
+    spaceBetween: 20,
+    speed: 700,
+    grabCursor: true,
+    rtl: true,
+    lazy: {
+      loadPrevNext: true,
+      enabled: true,
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".subjects-next",
+      prevEl: ".subjects-prev",
+    },
+    breakpoints: {
+      576: { slidesPerView: 2.5 },
+      768: { slidesPerView: 4 },
+    },
+  });
 
   /* ===============================
-     3. Courses Swiper
+     4. Courses Swiper
   =============================== */
   const coursesSwiper = new Swiper("[data-swiper='courses']", {
-    slidesPerView: 2.25,
+    slidesPerView: 1.5,
     spaceBetween: 15,
     speed: 700,
     grabCursor: true,
@@ -77,21 +103,46 @@ $(function () {
       prevEl: ".courses-prev",
     },
     breakpoints: {
-      576: { slidesPerView: 3.25 },
-      768: { slidesPerView: 4.25 },
+      576: { slidesPerView: 2.5 },
+      768: { slidesPerView: 4 },
     },
   });
 
 });
 
 
+  /* ===============================
+     4. Students Reviews Banner Swiper
+  =============================== */
+  const reviewsSwiper = new Swiper("[data-swiper='reviews']", {
+    slidesPerView: 1,
+    spaceBetween: 15,
+    loop: true,
+    speed: 700,
+    rtl: true,
+    lazy: {
+      loadPrevNext: true,
+      enabled: true,
+    },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    effect: "fade",
+    grabCursor: true,
+  });
+
 /* ===============================
-   Page Load Animations
+   5. Page Load Animations
 =============================== */
 $(window).on("load", function () {
 
   const sections = document.querySelectorAll(
-    ".home-banner, .best-terms, .best-courses"
+    ".home-banner, .section-stages, .section-subjects, .section-courses"
   );
 
   sections.forEach((section, index) => {
@@ -100,4 +151,88 @@ $(window).on("load", function () {
     }, index * 180); // stagger delay
   });
 
+});
+
+
+/* ===============================
+   5. UI Logic (Sidebar & Navbars)
+=============================== */
+$(document).ready(function () {
+
+  $('.menu-trigger').on('click', function (e) {
+      e.preventDefault();
+      $('body').addClass('menu-active');
+      // Hide navbars
+      $('.navbar, .bottom-navigation').css('opacity', '0');
+  });
+
+  $('.menu-overlay').on('click', function () {
+      $('body').removeClass('menu-active');
+      // Show navbars
+      $('.navbar, .bottom-navigation').css('opacity', '1');
+  });
+});
+
+/* ===============================
+   6. Search Feature
+=============================== */
+
+$(document).ready(function () {
+  const searchOverlay = $('#searchOverlay');
+  const searchInput = $('#searchInput');
+  
+  $(document).on('click', '.fa-search', function (e) {
+    e.preventDefault();
+    searchOverlay.addClass('active');
+    
+    setTimeout(() => {
+      searchInput.focus();
+    }, 400);
+  });
+
+  $('#closeSearch').on('click', function () {
+    searchOverlay.removeClass('active');
+  });
+
+  searchOverlay.on('click', function (e) {
+    if ($(e.target).hasClass('search-overlay')) {
+      searchOverlay.removeClass('active');
+    }
+  });
+});
+
+/* ===============================
+   7. The Add Code Feature
+=============================== */
+$(document).ready(function () {
+  const joinOverlay = $('#joinOverlay');
+  const courseInput = $('#courseCodeInput');
+
+  $(document).on('click', '.fa-plus', function (e) {
+    e.preventDefault();
+    joinOverlay.addClass('active');
+    
+    setTimeout(() => {
+      courseInput.focus();
+    }, 400);
+  });
+
+  $('#closeJoin').on('click', function () {
+    joinOverlay.removeClass('active');
+  });
+
+  joinOverlay.on('click', function (e) {
+    if ($(e.target).hasClass('search-overlay')) {
+      joinOverlay.removeClass('active');
+    }
+  });
+
+  $('#submitCodeBtn').on('click', function() {
+    const code = courseInput.val().trim();
+    if(code !== "") {
+        // Backend here
+        console.log("Submitting code:", code);
+        $(this).prop('disabled', true).text('جاري التحقق...');
+    }
+  });
 });

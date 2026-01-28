@@ -37,6 +37,7 @@
 *------------------------------------------------------------------*/
 :root {
   --main-color: #005356;
+  --main-teal: #3ba3b5;
   --alt-color: #ebd5b4;
   --text-color: #4f4f67;
   --placeholder: #929292;
@@ -390,14 +391,14 @@ textarea {
   box-shadow: var(--shadow-sm);
 }
 .swiper .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--alt-color);
+  background-color: var(--main-teal);
 }
 .swiper-button-next,
 .swiper-button-prev {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: var(--alt-color);
+  background-color: var(--main-color);
 }
 .swiper-button-next:after,
 .swiper-button-prev:after {
