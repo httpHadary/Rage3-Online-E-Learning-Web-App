@@ -722,7 +722,8 @@ body.menu-active .side-menu {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 83, 86, 0.8); 
+  /* background: rgba(0, 83, 86, 0.8);  */
+  background: rgba(59, 163, 181, 0.8);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);  
   z-index: 9999;
@@ -778,6 +779,7 @@ body.menu-active .side-menu {
   width: 45px;
   height: 45px;
   padding: 0;
+  /* background: linear-gradient(135deg, #3ba3b5, #3ba3b5); */
   background: linear-gradient(135deg, var(--main-teal), var(--dark-teal));
   border: none;
   border-radius: 50%;
@@ -809,7 +811,8 @@ body.menu-active .side-menu {
 .btn-submit-code {
   width: 100%;
   margin-top: 15px;
-  background: linear-gradient(135deg, #3ba3b5, #005356);
+  /* background: linear-gradient(135deg, #3ba3b5, #005356); */
+  background: linear-gradient(135deg, #3ba3b5, #3ba3b5);
   color: white;
   border: none;
   padding: 14px;
@@ -830,3 +833,22 @@ body.menu-active .side-menu {
   cursor: not-allowed;
   box-shadow: none;
 }
+
+/* temporary styling for the "view more" button instead of <a> */
+.section-action {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* temporary still under development pop up screen */
+.dev-message {
+  text-align: right;
+  color: #444;
+  font-size: 0.95rem;
+  margin: 15px 0 20px;
+  line-height: 1.6;
+}
+

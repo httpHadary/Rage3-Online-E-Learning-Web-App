@@ -1,3 +1,4 @@
+// Form validation
 $(function () {
   "use strict";
 
@@ -57,6 +58,31 @@ $(function () {
       
       sessionStorage.setItem("pendingRegistration", JSON.stringify(userData));
 
+      $(".login-card").addClass("card-exit");
+      setTimeout(function () {
+        window.location.href = "department.html";
+      }, 450);
+    });
+  }
+});
+
+// Form Without Validation
+$(function () {
+  "use strict";
+
+  const registerForm = $("#registerForm");
+
+  // Reset errors when user types
+  $('.form-input').on('input', function() {
+    $(this).removeClass('input-error');
+    $(this).next('.field-error').fadeOut(200);
+    $("#error-message").fadeOut(200);
+  });
+
+  if (true) {
+    registerForm.on("submit", function (e) {
+      e.preventDefault();
+      
       $(".login-card").addClass("card-exit");
       setTimeout(function () {
         window.location.href = "department.html";

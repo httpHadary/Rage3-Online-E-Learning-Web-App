@@ -1,3 +1,5 @@
+let lastScrollY = 0;
+
 $(function () {
   "use strict";
 
@@ -110,7 +112,6 @@ $(function () {
 
 });
 
-
   /* ===============================
      4. Students Reviews Banner Swiper
   =============================== */
@@ -158,18 +159,26 @@ $(window).on("load", function () {
    5. UI Logic (Sidebar & Navbars)
 =============================== */
 $(document).ready(function () {
-
   $('.menu-trigger').on('click', function (e) {
-      e.preventDefault();
-      $('body').addClass('menu-active');
-      // Hide navbars
-      $('.navbar, .bottom-navigation').css('opacity', '0');
+    e.preventDefault();
+
+    // 1. Save current scroll position
+    lastScrollY = window.scrollY || window.pageYOffset;
+    // 2. Scroll to top immediately
+    window.scrollTo(0, 0);
+    // 3. Activate menu
+    $('body').addClass('menu-active');
+    // Hide navbars
+    $('.navbar, .bottom-navigation').css('opacity', '0');
   });
 
   $('.menu-overlay').on('click', function () {
-      $('body').removeClass('menu-active');
-      // Show navbars
-      $('.navbar, .bottom-navigation').css('opacity', '1');
+    // 1. Close menu
+    $('body').removeClass('menu-active');
+    // Show navbars
+    $('.navbar, .bottom-navigation').css('opacity', '1');
+    // 2. Restore scroll position
+    window.scrollTo(0, lastScrollY);
   });
 });
 
@@ -227,12 +236,36 @@ $(document).ready(function () {
     }
   });
 
-  $('#submitCodeBtn').on('click', function() {
+  // $('#submitCodeBtn').on('click', function() {
+  //   const code = courseInput.val().trim();
+  //   if(code !== "") {
+  //       // Backend here
+  //       console.log("Submitting code:", code);
+  //       $(this).prop('disabled', true).text('جاري التحقق...');
+  //   }
+  // });
+
+  // Temporary
+    $('#submitCodeBtn').on('click', function() {
     const code = courseInput.val().trim();
-    if(code !== "") {
+    if(true) {
         // Backend here
         console.log("Submitting code:", code);
         $(this).prop('disabled', true).text('جاري التحقق...');
     }
   });
+});
+
+// Temporary "still under development" screen
+const devOverlay = document.getElementById("devOverlay");
+
+document.querySelectorAll(".dev-link").forEach(link => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();          // stop navigation
+    devOverlay.classList.add("active"); // show popup
+  });
+});
+
+closeDevOverlay.addEventListener("click", () => {
+  devOverlay.classList.remove("active");
 });
