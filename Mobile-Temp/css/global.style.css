@@ -18,6 +18,8 @@
 /*-------------------------------------------------------------------
 [Reset and Set Defaults ]
 *------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
 :root {
   --main-color: #005356;
   --main-teal: #3ba3b5;
@@ -38,6 +40,7 @@
     rgb(0 0 0 / 14%) 0px 6px 10px 0px, rgb(0 0 0 / 12%) 0px 1px 18px 0px;
   --shadow-lg: rgb(0 0 0 / 20%) 0px 7px 8px -4px,
     rgb(0 0 0 / 14%) 0px 12px 17px 2px, rgb(0 0 0 / 12%) 0px 5px 22px 4px;
+  --bs-body-font-family: "Tajawal", sans-serif;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -109,6 +112,37 @@ body {
   -webkit-font-smoothing: antialiased;
   position: relative;
 }
+
+html {
+  font-family: "Tajawal", sans-serif;
+}
+
+/* ===============================
+   Mobile App Shell
+=============================== */
+body.mobile-shell {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+body.mobile-shell .app {
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  max-height: 850px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
 /*-------------------------------------------------------------------
 [ Wrapper ]
 *------------------------------------------------------------------*/
@@ -800,3 +834,10 @@ textarea {
 .form .input-group:nth-child(3) { animation-delay: 0.5s; }
 .form .input-group:nth-child(4) { animation-delay: 0.6s; }
 .form .input-group:nth-child(5) { animation-delay: 0.7s; }
+
+body {
+  font-family: "Tajawal", sans-serif;
+}
+html, * {
+  font-family: "Tajawal", sans-serif;
+}

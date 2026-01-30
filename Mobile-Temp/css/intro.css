@@ -1,19 +1,3 @@
-/* Start of Fonts */
-@font-face {
-  font-family: "Harmattan";
-  src: url("../fonts/Harmattan-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Harmattan";
-  src: url("../fonts/Harmattan-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-/* End of Fonts */
 *::after,
 *::before {
   padding: 0;
@@ -23,7 +7,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Harmattan", sans-serif;
 }
 .row {
   background: url(../img/intro.png) no-repeat right center;

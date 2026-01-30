@@ -10,7 +10,6 @@ html, body {
   width: 100%;
   overflow: hidden;
   direction: rtl;
-  font-family: 'Harmattan', sans-serif;
   background-color: #f0f2f5;
   display: flex;
   justify-content: center;

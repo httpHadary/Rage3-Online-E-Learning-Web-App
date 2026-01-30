@@ -7,10 +7,6 @@
     <title>Rage3 Online</title>
     <!-- Fontawesome font file css -->
     <link rel="stylesheet" href="css/font-awesome/css/all.min.css" />
-    <!-- Tajwal Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
     <!-- Swiper Slider -->
     <link rel="stylesheet" href="plugins/swiper/swiper-bundle.min.css" />
     <!-- Floating Action Button -->
@@ -19,827 +15,833 @@
     <link rel="stylesheet" href="css/global.style.css" />
     <!-- page Style -->
     <link rel="stylesheet" href="css/pages/home.css" />
+    <!-- Loading Tajwal Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
   </head>
 
   <body>
 
-    <div class="search-overlay" id="searchOverlay">
-      <div class="search-container">
+    <div class="mobile-shell">
+      <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
 
-        <div class="search-input-wrapper">
-          <input type="text" placeholder="ما الذي تبحث عنه؟" id="searchInput">
+          <div class="search-input-wrapper">
+            <input type="text" placeholder="ما الذي تبحث عنه؟" id="searchInput">
 
-          <button class="close-search" id="closeSearch">
-            <i class="fas fa-times"></i>
-          </button>
+            <button class="close-search" id="closeSearch">
+              <i class="fas fa-times"></i>
+            </button>
+
+          </div>
+
+          <div class="search-results"></div>
 
         </div>
-
-        <div class="search-results"></div>
-
       </div>
-    </div>
 
-    <div class="search-overlay" id="joinOverlay">
-      <div class="search-container join-container">
-        <div class="section-heading mb-2">
-          <h2 class="heading-title" style="font-size: 1.2rem;">تفعيل كورس جديد</h2>
+      <div class="search-overlay" id="joinOverlay">
+        <div class="search-container join-container">
+          <div class="section-heading mb-2">
+            <h2 class="heading-title" style="font-size: 1.2rem;">تفعيل كورس جديد</h2>
+          </div>
+          <div class="search-input-wrapper">
+            <input type="text" placeholder="أدخل كود التفعيل هنا..." id="courseCodeInput">
+            <button class="close-search" id="closeJoin">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <button class="btn-submit-code" id="submitCodeBtn">تفعيل الآن</button>
+          <div id="joinStatus" class="search-results"></div>
         </div>
-        <div class="search-input-wrapper">
-          <input type="text" placeholder="أدخل كود التفعيل هنا..." id="courseCodeInput">
-          <button class="close-search" id="closeJoin">
-            <i class="fas fa-times"></i>
+      </div>
+
+      <div class="search-overlay" id="devOverlay">
+        <div class="search-container join-container">
+          
+          <div class="section-heading mb-2">
+            <h2 class="heading-title" style="font-size: 1.2rem;">
+              تحت التطوير
+            </h2>
+          </div>
+
+          <p class="dev-message">
+            هذه الميزة ما زالت قيد التطوير وستتوفر قريبًا بإذن الله.
+          </p>
+
+          <button class="btn-submit-code" id="closeDevOverlay">
+            حسنًا
           </button>
         </div>
-        <button class="btn-submit-code" id="submitCodeBtn">تفعيل الآن</button>
-        <div id="joinStatus" class="search-results"></div>
       </div>
-    </div>
 
-    <div class="search-overlay" id="devOverlay">
-      <div class="search-container join-container">
+
+      <nav class="navbar themed-top-bar">
+        <div class="bar-effects"></div>
         
-        <div class="section-heading mb-2">
-          <h2 class="heading-title" style="font-size: 1.2rem;">
-            تحت التطوير
-          </h2>
+        <div class="nav-content">
+          <div class="nav-side-group">
+            <a href="#" class="menu-trigger">
+              <i class="fas fa-bars"></i>
+            </a>
+          </div>
+          
+          <div class="top-logo">
+            <img src="img/Hadary/Logo1.png" alt="logo" />
+          </div>
+
+          <div class="nav-side-group right">
+            <div class="top-actions">
+              <button class="action-btn"><i class="fas fa-search"></i></button>
+              <button class="action-btn"><i class="fas fa-plus"></i></button>
+            </div>
+          </div>
         </div>
+      </nav>
 
-        <p class="dev-message">
-          هذه الميزة ما زالت قيد التطوير وستتوفر قريبًا بإذن الله.
-        </p>
+      <main class="app">
 
-        <button class="btn-submit-code" id="closeDevOverlay">
-          حسنًا
-        </button>
-      </div>
-    </div>
+        <aside class="side-menu">
 
+          <!-- <a href="profile.html">
+            <div class="side-menu-header">
+              <img src="img/Hadary/avatar.png" alt="User Avatar" class="user-avatar">
+              
+              <div class="user-info">
+                <h3>Ahmed Elhadary</h3>
+                <p>الصف الثالث الثانوي</p>
+              </div>
+            </div>
+          </a> -->
 
-    <nav class="navbar themed-top-bar">
-      <div class="bar-effects"></div>
-      
-      <div class="nav-content">
-        <div class="nav-side-group">
-          <a href="#" class="menu-trigger">
-            <i class="fas fa-bars"></i>
+          <a href="#" class="dev-link">
+            <div class="side-menu-header">
+              <img src="img/Hadary/avatar.png" alt="User Avatar" class="user-avatar">
+
+              <div class="user-info">
+                <h3>Ahmed Elhadary</h3>
+                <p>الصف الثالث الثانوي</p>
+              </div>
+            </div>
           </a>
-        </div>
-        
-        <div class="top-logo">
-          <img src="img/Hadary/Logo1.png" alt="logo" />
-        </div>
-
-        <div class="nav-side-group right">
-          <div class="top-actions">
-            <button class="action-btn"><i class="fas fa-search"></i></button>
-            <button class="action-btn"><i class="fas fa-plus"></i></button>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <main class="app">
-
-      <aside class="side-menu">
-
-        <!-- <a href="profile.html">
-          <div class="side-menu-header">
-            <img src="img/Hadary/avatar.png" alt="User Avatar" class="user-avatar">
-            
-            <div class="user-info">
-              <h3>Ahmed Elhadary</h3>
-              <p>الصف الثالث الثانوي</p>
-            </div>
-          </div>
-        </a> -->
-
-        <a href="#" class="dev-link">
-          <div class="side-menu-header">
-            <img src="img/Hadary/avatar.png" alt="User Avatar" class="user-avatar">
-
-            <div class="user-info">
-              <h3>Ahmed Elhadary</h3>
-              <p>الصف الثالث الثانوي</p>
-            </div>
-          </div>
-        </a>
 
 
-          <!-- <nav class="side-menu-links">
-            <div class="menu-main">
-              <a href="#"><i class="fas fa-user-circle"></i> الملف الشخصى</a>
-              <a href="#"><i class="fas fa-wallet"></i> الاشتراكات</a>
-              <a href="#"><i class="fas fa-key"></i> تغيير كلمة السر</a>
-              <a href="#"><i class="fas fa-cog"></i> الإعدادات</a>
-            </div>
+            <!-- <nav class="side-menu-links">
+              <div class="menu-main">
+                <a href="#"><i class="fas fa-user-circle"></i> الملف الشخصى</a>
+                <a href="#"><i class="fas fa-wallet"></i> الاشتراكات</a>
+                <a href="#"><i class="fas fa-key"></i> تغيير كلمة السر</a>
+                <a href="#"><i class="fas fa-cog"></i> الإعدادات</a>
+              </div>
 
-            <div class="menu-footer">
-              <a href="#"><i class="fas fa-share"></i> شارك التطبيق</a>
-              <a href="login.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
-            </div>
-          </nav> -->
+              <div class="menu-footer">
+                <a href="#"><i class="fas fa-share"></i> شارك التطبيق</a>
+                <a href="login.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+              </div>
+            </nav> -->
 
-          <nav class="side-menu-links">
-            <div class="menu-main">
-              <a href="#" class="dev-link"><i class="fas fa-user-circle"></i> الملف الشخصى</a>
-              <a href="#" class="dev-link"><i class="fas fa-wallet"></i> الاشتراكات</a>
-              <a href="#" class="dev-link"><i class="fas fa-key"></i> تغيير كلمة السر</a>
-              <a href="#" class="dev-link"><i class="fas fa-cog"></i> الإعدادات</a>
-            </div>
+            <nav class="side-menu-links">
+              <div class="menu-main">
+                <a href="#" class="dev-link"><i class="fas fa-user-circle"></i> الملف الشخصى</a>
+                <a href="#" class="dev-link"><i class="fas fa-wallet"></i> الاشتراكات</a>
+                <a href="#" class="dev-link"><i class="fas fa-key"></i> تغيير كلمة السر</a>
+                <a href="#" class="dev-link"><i class="fas fa-cog"></i> الإعدادات</a>
+              </div>
 
-            <div class="menu-footer">
-              <a href="#" class="dev-link"><i class="fas fa-share"></i> شارك التطبيق</a>
-              <a href="login.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
-            </div>
-          </nav>
+              <div class="menu-footer">
+                <a href="#" class="dev-link"><i class="fas fa-share"></i> شارك التطبيق</a>
+                <a href="login.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+              </div>
+            </nav>
 
-      </aside>
-      <div class="menu-overlay"></div>
+        </aside>
+        <div class="menu-overlay"></div>
 
-      <div id="app-container" class="app-container">
+        <div id="app-container" class="app-container">
 
-        <div class="content">
-          <div class="container">
-            
-            <section class="swiper home-banner mb-3" data-swiper="banner">
-              <div class="swiper-wrapper">
+          <div class="content">
+            <div class="container">
+              
+              <section class="swiper home-banner mb-3" data-swiper="banner">
+                <div class="swiper-wrapper">
+                  
+                  <div class="swiper-slide banner-item">
+                      <img
+                        data-src="img/Hadary/Home-Banners/banner-1.jpg"
+                        src="img/Hadary/Home-Banners/placeholder.jpg"
+                        width="400"
+                        height="200"
+                        alt="banner-1"
+                        class="swiper-lazy"
+                      />
+                  </div>
+
+                  <div class="swiper-slide banner-item">
+                      <img
+                        data-src="img/Hadary/Home-Banners/banner-2.jpg"
+                        src="img/Hadary/Home-Banners/placeholder.jpg"
+                        width="400"
+                        height="200"
+                        alt="banner-2"
+                        class="swiper-lazy"
+                      />
+                  </div>
+
+                  <div class="swiper-slide banner-item">
+                      <img
+                        data-src="img/Hadary/Home-Banners/banner-3.jpg"
+                        src="img/Hadary/Home-Banners/placeholder.jpg"
+                        width="400"
+                        height="200"
+                        alt="banner-3"
+                        class="swiper-lazy"
+                      />
+                  </div>
+
+                  <div class="swiper-slide banner-item">
+                      <img
+                        data-src="img/Hadary/Home-Banners/banner-4.jpg"
+                        src="img/Hadary/Home-Banners/placeholder.jpg"
+                        width="400"
+                        height="200"
+                        alt="banner-4"
+                        class="swiper-lazy"
+                      />
+                  </div>
+
+                  <div class="swiper-slide banner-item">
+                      <img
+                        data-src="img/Hadary/Home-Banners/banner-5.jpg"
+                        src="img/Hadary/Home-Banners/placeholder.jpg"
+                        width="400"
+                        height="200"
+                        alt="banner-5"
+                        class="swiper-lazy"
+                      />
+                  </div>
+
+                </div>
+              </section>
+
+              <!-- Subjects -->
+  <!--              
+              <section class="section-subjects mb-3">
                 
-                <div class="swiper-slide banner-item">
-                    <img
-                      data-src="img/Hadary/Home-Banners/banner-1.jpg"
-                      src="img/Hadary/Home-Banners/placeholder.jpg"
-                      width="400"
-                      height="200"
-                      alt="banner-1"
-                      class="swiper-lazy"
-                    />
+                <div class="section-heading">
+                  <h2 class="heading-title">المواد الدراسية</h2>
+                  <button class="btn section-action dev-link">المزيد</button>
                 </div>
 
-                <div class="swiper-slide banner-item">
-                    <img
-                      data-src="img/Hadary/Home-Banners/banner-2.jpg"
-                      src="img/Hadary/Home-Banners/placeholder.jpg"
-                      width="400"
-                      height="200"
-                      alt="banner-2"
-                      class="swiper-lazy"
-                    />
+                <div class="swiper subjects-wrapper" data-swiper="subjects">
+                  <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                      <a href="stage-courses.html" class="subject-item">
+                        
+                        <div class="image">
+                          <img
+                            data-src="img/terms/term-1.webp"
+                            src="img/terms/placeholder-400x200.png"
+                            alt="term-1"
+                            width="210"
+                            height="150"
+                            class="swiper-lazy"
+                          />
+                        </div>
+
+                        <div class="subject-item-content">
+                          <h3 class="title">اللغة العربية</h3>
+                          <p class="courses">6 مدرسين</p>
+                        </div>
+
+                      </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <a href="stage-courses.html" class="subject-item">
+                        
+                        <div class="image">
+                          <img
+                            data-src="img/terms/term-2.webp"
+                            src="img/terms/placeholder-400x200.png"
+                            alt="term-1"
+                            width="210"
+                            height="150"
+                            class="swiper-lazy"
+                          />
+                        </div>
+
+                        <div class="subject-item-content">
+                          <h3 class="title">اللغة اﻹنجليزية</h3>
+                          <p class="courses">8 مدرسين</p>
+                        </div>
+
+                      </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <a href="stage-courses.html" class="subject-item">
+                        
+                        <div class="image">
+                          <img
+                            data-src="img/terms/term-3.jpg"
+                            src="img/terms/placeholder-400x200.png"
+                            alt="term-1"
+                            width="210"
+                            height="150"
+                            class="swiper-lazy"
+                          />
+                        </div>
+
+                        <div class="subject-item-content">
+                          <h3 class="title">الجغرافيا</h3>
+                          <p class="courses">4 مدرسين</p>
+                        </div>
+
+                      </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <a href="stage-courses.html" class="subject-item">
+                        
+                        <div class="image">
+                          <img
+                            data-src="img/terms/term-4.jpg"
+                            src="img/terms/placeholder-400x200.png"
+                            alt="term-1"
+                            width="210"
+                            height="150"
+                            class="swiper-lazy"
+                          />
+                        </div>
+
+                        <div class="subject-item-content">
+                          <h3 class="title">الرياضيات</h3>
+                          <p class="courses">7 مدرسين</p>
+                        </div>
+
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="swiper-button-next subjects-next"></div>
+                  <div class="swiper-button-prev subjects-prev"></div>
                 </div>
 
-                <div class="swiper-slide banner-item">
-                    <img
-                      data-src="img/Hadary/Home-Banners/banner-3.jpg"
-                      src="img/Hadary/Home-Banners/placeholder.jpg"
-                      width="400"
-                      height="200"
-                      alt="banner-3"
-                      class="swiper-lazy"
-                    />
+              </section> -->
+
+
+              <section class="section-subjects mb-3">
+                
+                <div class="section-heading">
+                  <h2 class="heading-title">المواد الدراسية</h2>
+                  <button class="btn section-action dev-link">المزيد</button>
                 </div>
 
-                <div class="swiper-slide banner-item">
-                    <img
-                      data-src="img/Hadary/Home-Banners/banner-4.jpg"
-                      src="img/Hadary/Home-Banners/placeholder.jpg"
-                      width="400"
-                      height="200"
-                      alt="banner-4"
-                      class="swiper-lazy"
-                    />
+                <div class="swiper subjects-wrapper" data-swiper="subjects">
+                  <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                      <a href="#" class="subject-item dev-link">
+                        
+                        <div class="image">
+                          <img
+                            data-src="img/terms/term-1.webp"
+                            src="img/terms/placeholder-400x200.png"
+                            alt="term-1"
+                            width="210"
+                            height="150"
+                            class="swiper-lazy"
+                          />
+                        </div>
+
+                        <div class="subject-item-content">
+                          <h3 class="title">اللغة العربية</h3>
+                          <p class="courses">6 مدرسين</p>
+                        </div>
+
+                      </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <a href="#" class="subject-item dev-link">
+                        
+                        <div class="image">
+                          <img
+                            data-src="img/terms/term-2.webp"
+                            src="img/terms/placeholder-400x200.png"
+                            alt="term-1"
+                            width="210"
+                            height="150"
+                            class="swiper-lazy"
+                          />
+                        </div>
+
+                        <div class="subject-item-content">
+                          <h3 class="title">اللغة اﻹنجليزية</h3>
+                          <p class="courses">8 مدرسين</p>
+                        </div>
+
+                      </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <a href="#" class="subject-item dev-link">
+                        
+                        <div class="image">
+                          <img
+                            data-src="img/terms/term-3.jpg"
+                            src="img/terms/placeholder-400x200.png"
+                            alt="term-1"
+                            width="210"
+                            height="150"
+                            class="swiper-lazy"
+                          />
+                        </div>
+
+                        <div class="subject-item-content">
+                          <h3 class="title">الجغرافيا</h3>
+                          <p class="courses">4 مدرسين</p>
+                        </div>
+
+                      </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <a href="#" class="subject-item dev-link">
+                        
+                        <div class="image">
+                          <img
+                            data-src="img/terms/term-4.jpg"
+                            src="img/terms/placeholder-400x200.png"
+                            alt="term-1"
+                            width="210"
+                            height="150"
+                            class="swiper-lazy"
+                          />
+                        </div>
+
+                        <div class="subject-item-content">
+                          <h3 class="title">الرياضيات</h3>
+                          <p class="courses">7 مدرسين</p>
+                        </div>
+
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="swiper-button-next subjects-next"></div>
+                  <div class="swiper-button-prev subjects-prev"></div>
                 </div>
 
-                <div class="swiper-slide banner-item">
-                    <img
-                      data-src="img/Hadary/Home-Banners/banner-5.jpg"
-                      src="img/Hadary/Home-Banners/placeholder.jpg"
-                      width="400"
-                      height="200"
-                      alt="banner-5"
-                      class="swiper-lazy"
-                    />
+              </section>
+
+              <!-- Best Sellers -->
+  <!--              
+              <section class="section-courses mb-3">
+                
+                <div class="section-heading">
+                  <h2 class="heading-title">الكورسات اﻷكثر مبيعاً</h2>
+                  <button class="btn section-action dev-link">المزيد</button>
                 </div>
 
-              </div>
-            </section>
+                <div class="swiper courses-wrapper" data-swiper="courses">
+                  <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide">
+                      <a href="course.html" class="course-item">
+                        
+                        <div class="image">
+                          <img
+                            data-src="img/terms/term-1.webp"
+                            src="img/terms/placeholder-400x200.png"
+                            alt="course-1"
+                            width="210"
+                            height="150"
+                            class="swiper-lazy"
+                          />
+                        </div>
 
-            <!-- Subjects -->
-<!--              
-            <section class="section-subjects mb-3">
-              
-              <div class="section-heading">
-                <h2 class="heading-title">المواد الدراسية</h2>
-                <button class="btn section-action dev-link">المزيد</button>
-              </div>
+                        <div class="course-item-content">
+                          <h3 class="title">كورس الكيمياء</h3>
+                          <p class="course-stage">اﻷول الثانوى</p>
+                          <br>
+                          <p class="teacher">أ / عبد الجواد</p>
+                          <br>
+                          <p class="price-tag">450 LE</p>
+                        </div>
 
-              <div class="swiper subjects-wrapper" data-swiper="subjects">
-                <div class="swiper-wrapper">
+                      </a>
+                    </div>
 
-                  <div class="swiper-slide">
-                    <a href="stage-courses.html" class="subject-item">
-                      
-                      <div class="image">
-                        <img
-                          data-src="img/terms/term-1.webp"
-                          src="img/terms/placeholder-400x200.png"
-                          alt="term-1"
-                          width="210"
-                          height="150"
-                          class="swiper-lazy"
-                        />
-                      </div>
+                    <div class="swiper-slide">
+                      <a href="course.html" class="course-item">
+                        
+                        <div class="image">
+                          <img
+                            data-src="img/terms/term-2.webp"
+                            src="img/terms/placeholder-400x200.png"
+                            alt="course-1"
+                            width="210"
+                            height="150"
+                            class="swiper-lazy"
+                          />
+                        </div>
 
-                      <div class="subject-item-content">
-                        <h3 class="title">اللغة العربية</h3>
-                        <p class="courses">6 مدرسين</p>
-                      </div>
+                        <div class="course-item-content">
+                          <h3 class="title">كورس التاريخ</h3>
+                          <p class="course-stage">الثانى الثانوى</p>
+                          <br>
+                          <p class="teacher">أ / إسلام القيصر</p>
+                          <br>
+                          <p class="price-tag">360 LE</p>
+                        </div>
 
-                    </a>
+                      </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <a href="course.html" class="course-item">
+                        
+                        <div class="image">
+                          <img
+                            data-src="img/terms/term-3.jpg"
+                            src="img/terms/placeholder-400x200.png"
+                            alt="course-1"
+                            width="210"
+                            height="150"
+                            class="swiper-lazy"
+                          />
+                        </div>
+
+                        <div class="course-item-content">
+                          <h3 class="title">كورس الرياضيات لغات</h3>
+                          <p class="course-stage">الثالث الثانوى</p>
+                          <br>
+                          <p class="teacher">أ / محمد شحاتة</p>
+                          <br>
+                          <p class="price-tag">650 LE</p>
+                        </div>
+
+                      </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <a href="course.html" class="course-item">
+                        
+                        <div class="image">
+                          <img
+                            data-src="img/terms/term-4.jpg"
+                            src="img/terms/placeholder-400x200.png"
+                            alt="course-1"
+                            width="210"
+                            height="150"
+                            class="swiper-lazy"
+                          />
+                        </div>
+
+                        <div class="course-item-content">
+                          <h3 class="title">كورس الجيولوجيا</h3>
+                          <p class="course-stage">الثالث الثانوى</p>
+                          <br>
+                          <p class="teacher">أ / حميدة أحمد</p>
+                          <br>
+                          <p class="price-tag">400 LE</p>
+                        </div>
+
+                      </a>
+                    </div>
                   </div>
 
-                  <div class="swiper-slide">
-                    <a href="stage-courses.html" class="subject-item">
-                      
-                      <div class="image">
-                        <img
-                          data-src="img/terms/term-2.webp"
-                          src="img/terms/placeholder-400x200.png"
-                          alt="term-1"
-                          width="210"
-                          height="150"
-                          class="swiper-lazy"
-                        />
-                      </div>
+                  <div class="swiper-button-next courses-next"></div>
+                  <div class="swiper-button-prev courses-prev"></div>
+                </div>
+              </section> -->
 
-                      <div class="subject-item-content">
-                        <h3 class="title">اللغة اﻹنجليزية</h3>
-                        <p class="courses">8 مدرسين</p>
-                      </div>
 
-                    </a>
-                  </div>
-
-                  <div class="swiper-slide">
-                    <a href="stage-courses.html" class="subject-item">
-                      
-                      <div class="image">
-                        <img
-                          data-src="img/terms/term-3.jpg"
-                          src="img/terms/placeholder-400x200.png"
-                          alt="term-1"
-                          width="210"
-                          height="150"
-                          class="swiper-lazy"
-                        />
-                      </div>
-
-                      <div class="subject-item-content">
-                        <h3 class="title">الجغرافيا</h3>
-                        <p class="courses">4 مدرسين</p>
-                      </div>
-
-                    </a>
-                  </div>
-
-                  <div class="swiper-slide">
-                    <a href="stage-courses.html" class="subject-item">
-                      
-                      <div class="image">
-                        <img
-                          data-src="img/terms/term-4.jpg"
-                          src="img/terms/placeholder-400x200.png"
-                          alt="term-1"
-                          width="210"
-                          height="150"
-                          class="swiper-lazy"
-                        />
-                      </div>
-
-                      <div class="subject-item-content">
-                        <h3 class="title">الرياضيات</h3>
-                        <p class="courses">7 مدرسين</p>
-                      </div>
-
-                    </a>
-                  </div>
+              <section class="section-courses mb-3">
+                
+                <div class="section-heading">
+                  <h2 class="heading-title">الكورسات اﻷكثر مبيعاً</h2>
+                  <button class="btn section-action dev-link">المزيد</button>
                 </div>
 
-                <div class="swiper-button-next subjects-next"></div>
-                <div class="swiper-button-prev subjects-prev"></div>
-              </div>
+                <div class="swiper courses-wrapper" data-swiper="courses">
+                  <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide">
+                      <a href="#" class="course-item dev-link">
+                        
+                        <div class="image">
+                          <img
+                            data-src="img/terms/term-1.webp"
+                            src="img/terms/placeholder-400x200.png"
+                            alt="course-1"
+                            width="210"
+                            height="150"
+                            class="swiper-lazy"
+                          />
+                        </div>
 
-            </section> -->
+                        <div class="course-item-content">
+                          <h3 class="title">كورس الكيمياء</h3>
+                          <p class="course-stage">اﻷول الثانوى</p>
+                          <br>
+                          <p class="teacher">أ / عبد الجواد</p>
+                          <br>
+                          <p class="price-tag">450 LE</p>
+                        </div>
 
+                      </a>
+                    </div>
 
-            <section class="section-subjects mb-3">
-              
-              <div class="section-heading">
-                <h2 class="heading-title">المواد الدراسية</h2>
-                <button class="btn section-action dev-link">المزيد</button>
-              </div>
+                    <div class="swiper-slide">
+                      <a href="#" class="course-item dev-link">
+                        
+                        <div class="image">
+                          <img
+                            data-src="img/terms/term-2.webp"
+                            src="img/terms/placeholder-400x200.png"
+                            alt="course-1"
+                            width="210"
+                            height="150"
+                            class="swiper-lazy"
+                          />
+                        </div>
 
-              <div class="swiper subjects-wrapper" data-swiper="subjects">
-                <div class="swiper-wrapper">
+                        <div class="course-item-content">
+                          <h3 class="title">كورس التاريخ</h3>
+                          <p class="course-stage">الثانى الثانوى</p>
+                          <br>
+                          <p class="teacher">أ / إسلام القيصر</p>
+                          <br>
+                          <p class="price-tag">360 LE</p>
+                        </div>
 
-                  <div class="swiper-slide">
-                    <a href="#" class="subject-item dev-link">
-                      
-                      <div class="image">
-                        <img
-                          data-src="img/terms/term-1.webp"
-                          src="img/terms/placeholder-400x200.png"
-                          alt="term-1"
-                          width="210"
-                          height="150"
-                          class="swiper-lazy"
-                        />
-                      </div>
+                      </a>
+                    </div>
 
-                      <div class="subject-item-content">
-                        <h3 class="title">اللغة العربية</h3>
-                        <p class="courses">6 مدرسين</p>
-                      </div>
+                    <div class="swiper-slide">
+                      <a href="#" class="course-item dev-link">
+                        
+                        <div class="image">
+                          <img
+                            data-src="img/terms/term-3.jpg"
+                            src="img/terms/placeholder-400x200.png"
+                            alt="course-1"
+                            width="210"
+                            height="150"
+                            class="swiper-lazy"
+                          />
+                        </div>
 
-                    </a>
+                        <div class="course-item-content">
+                          <h3 class="title">كورس الرياضيات لغات</h3>
+                          <p class="course-stage">الثالث الثانوى</p>
+                          <br>
+                          <p class="teacher">أ / محمد شحاتة</p>
+                          <br>
+                          <p class="price-tag">650 LE</p>
+                        </div>
+
+                      </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <a href="#" class="course-item dev-link">
+                        
+                        <div class="image">
+                          <img
+                            data-src="img/terms/term-4.jpg"
+                            src="img/terms/placeholder-400x200.png"
+                            alt="course-1"
+                            width="210"
+                            height="150"
+                            class="swiper-lazy"
+                          />
+                        </div>
+
+                        <div class="course-item-content">
+                          <h3 class="title">كورس الجيولوجيا</h3>
+                          <p class="course-stage">الثالث الثانوى</p>
+                          <br>
+                          <p class="teacher">أ / حميدة أحمد</p>
+                          <br>
+                          <p class="price-tag">400 LE</p>
+                        </div>
+
+                      </a>
+                    </div>
                   </div>
 
-                  <div class="swiper-slide">
-                    <a href="#" class="subject-item dev-link">
-                      
-                      <div class="image">
-                        <img
-                          data-src="img/terms/term-2.webp"
-                          src="img/terms/placeholder-400x200.png"
-                          alt="term-1"
-                          width="210"
-                          height="150"
-                          class="swiper-lazy"
-                        />
-                      </div>
-
-                      <div class="subject-item-content">
-                        <h3 class="title">اللغة اﻹنجليزية</h3>
-                        <p class="courses">8 مدرسين</p>
-                      </div>
-
-                    </a>
-                  </div>
-
-                  <div class="swiper-slide">
-                    <a href="#" class="subject-item dev-link">
-                      
-                      <div class="image">
-                        <img
-                          data-src="img/terms/term-3.jpg"
-                          src="img/terms/placeholder-400x200.png"
-                          alt="term-1"
-                          width="210"
-                          height="150"
-                          class="swiper-lazy"
-                        />
-                      </div>
-
-                      <div class="subject-item-content">
-                        <h3 class="title">الجغرافيا</h3>
-                        <p class="courses">4 مدرسين</p>
-                      </div>
-
-                    </a>
-                  </div>
-
-                  <div class="swiper-slide">
-                    <a href="#" class="subject-item dev-link">
-                      
-                      <div class="image">
-                        <img
-                          data-src="img/terms/term-4.jpg"
-                          src="img/terms/placeholder-400x200.png"
-                          alt="term-1"
-                          width="210"
-                          height="150"
-                          class="swiper-lazy"
-                        />
-                      </div>
-
-                      <div class="subject-item-content">
-                        <h3 class="title">الرياضيات</h3>
-                        <p class="courses">7 مدرسين</p>
-                      </div>
-
-                    </a>
-                  </div>
+                  <div class="swiper-button-next courses-next"></div>
+                  <div class="swiper-button-prev courses-prev"></div>
                 </div>
+              </section>
 
-                <div class="swiper-button-next subjects-next"></div>
-                <div class="swiper-button-prev subjects-prev"></div>
-              </div>
-
-            </section>
-
-            <!-- Best Sellers -->
-<!--              
-            <section class="section-courses mb-3">
-              
-              <div class="section-heading">
-                <h2 class="heading-title">الكورسات اﻷكثر مبيعاً</h2>
-                <button class="btn section-action dev-link">المزيد</button>
-              </div>
-
-              <div class="swiper courses-wrapper" data-swiper="courses">
+              <!-- Student Reviews -->
+              <section class="swiper students-reviews mb-3" data-swiper="reviews">
+                <div class="section-heading">
+                  <h2 class="heading-title">آراء بعض طلابنا</h2>
+                </div>
+                
                 <div class="swiper-wrapper">
                   
                   <div class="swiper-slide">
-                    <a href="course.html" class="course-item">
-                      
-                      <div class="image">
-                        <img
-                          data-src="img/terms/term-1.webp"
-                          src="img/terms/placeholder-400x200.png"
-                          alt="course-1"
-                          width="210"
-                          height="150"
-                          class="swiper-lazy"
-                        />
-                      </div>
-
-                      <div class="course-item-content">
-                        <h3 class="title">كورس الكيمياء</h3>
-                        <p class="course-stage">اﻷول الثانوى</p>
-                        <br>
-                        <p class="teacher">أ / عبد الجواد</p>
-                        <br>
-                        <p class="price-tag">450 LE</p>
-                      </div>
-
-                    </a>
+                    <div class="review-item">
+                      <img
+                        data-src="img/Hadary/Home-Banners/review-1.jpg"
+                        src="img/Hadary/Home-Banners/placeholder.jpg"
+                        width="400"
+                        height="200"
+                        alt="review-1"
+                        class="swiper-lazy"
+                      />
+                    </div>
                   </div>
 
                   <div class="swiper-slide">
-                    <a href="course.html" class="course-item">
-                      
-                      <div class="image">
-                        <img
-                          data-src="img/terms/term-2.webp"
-                          src="img/terms/placeholder-400x200.png"
-                          alt="course-1"
-                          width="210"
-                          height="150"
-                          class="swiper-lazy"
-                        />
-                      </div>
-
-                      <div class="course-item-content">
-                        <h3 class="title">كورس التاريخ</h3>
-                        <p class="course-stage">الثانى الثانوى</p>
-                        <br>
-                        <p class="teacher">أ / إسلام القيصر</p>
-                        <br>
-                        <p class="price-tag">360 LE</p>
-                      </div>
-
-                    </a>
+                    <div class="review-item">
+                      <img
+                        data-src="img/Hadary/Home-Banners/review-2.jpg"
+                        src="img/Hadary/Home-Banners/placeholder.jpg"
+                        width="400"
+                        height="200"
+                        alt="review-2"
+                        class="swiper-lazy"
+                      />
+                    </div>
                   </div>
 
                   <div class="swiper-slide">
-                    <a href="course.html" class="course-item">
-                      
-                      <div class="image">
-                        <img
-                          data-src="img/terms/term-3.jpg"
-                          src="img/terms/placeholder-400x200.png"
-                          alt="course-1"
-                          width="210"
-                          height="150"
-                          class="swiper-lazy"
-                        />
-                      </div>
-
-                      <div class="course-item-content">
-                        <h3 class="title">كورس الرياضيات لغات</h3>
-                        <p class="course-stage">الثالث الثانوى</p>
-                        <br>
-                        <p class="teacher">أ / محمد شحاتة</p>
-                        <br>
-                        <p class="price-tag">650 LE</p>
-                      </div>
-
-                    </a>
+                    <div class="review-item">
+                      <img
+                        data-src="img/Hadary/Home-Banners/review-3.jpg"
+                        src="img/Hadary/Home-Banners/placeholder.jpg"
+                        width="400"
+                        height="200"
+                        alt="review-3"
+                        class="swiper-lazy"
+                      />
+                    </div>
                   </div>
 
                   <div class="swiper-slide">
-                    <a href="course.html" class="course-item">
-                      
-                      <div class="image">
-                        <img
-                          data-src="img/terms/term-4.jpg"
-                          src="img/terms/placeholder-400x200.png"
-                          alt="course-1"
-                          width="210"
-                          height="150"
-                          class="swiper-lazy"
-                        />
-                      </div>
-
-                      <div class="course-item-content">
-                        <h3 class="title">كورس الجيولوجيا</h3>
-                        <p class="course-stage">الثالث الثانوى</p>
-                        <br>
-                        <p class="teacher">أ / حميدة أحمد</p>
-                        <br>
-                        <p class="price-tag">400 LE</p>
-                      </div>
-
-                    </a>
+                    <div class="review-item">
+                      <img
+                        data-src="img/Hadary/Home-Banners/review-4.jpg"
+                        src="img/Hadary/Home-Banners/placeholder.jpg"
+                        width="400"
+                        height="200"
+                        alt="review-4"
+                        class="swiper-lazy"
+                      />
+                    </div>
                   </div>
+
+                  <div class="swiper-slide">
+                    <div class="review-item">
+                      <img
+                        data-src="img/Hadary/Home-Banners/review-5.jpg"
+                        src="img/Hadary/Home-Banners/placeholder.jpg"
+                        width="400"
+                        height="200"
+                        alt="review-5"
+                        class="swiper-lazy"
+                      />
+                    </div>
+                  </div>
+
                 </div>
+              </section>
 
-                <div class="swiper-button-next courses-next"></div>
-                <div class="swiper-button-prev courses-prev"></div>
-              </div>
-            </section> -->
-
-
-            <section class="section-courses mb-3">
-              
-              <div class="section-heading">
-                <h2 class="heading-title">الكورسات اﻷكثر مبيعاً</h2>
-                <button class="btn section-action dev-link">المزيد</button>
+              <div class="footer-note">
+                - الطريق إلى اﻹمتحان مع راجع أونلاين -
               </div>
 
-              <div class="swiper courses-wrapper" data-swiper="courses">
-                <div class="swiper-wrapper">
-                  
-                  <div class="swiper-slide">
-                    <a href="#" class="course-item dev-link">
-                      
-                      <div class="image">
-                        <img
-                          data-src="img/terms/term-1.webp"
-                          src="img/terms/placeholder-400x200.png"
-                          alt="course-1"
-                          width="210"
-                          height="150"
-                          class="swiper-lazy"
-                        />
-                      </div>
-
-                      <div class="course-item-content">
-                        <h3 class="title">كورس الكيمياء</h3>
-                        <p class="course-stage">اﻷول الثانوى</p>
-                        <br>
-                        <p class="teacher">أ / عبد الجواد</p>
-                        <br>
-                        <p class="price-tag">450 LE</p>
-                      </div>
-
-                    </a>
-                  </div>
-
-                  <div class="swiper-slide">
-                    <a href="#" class="course-item dev-link">
-                      
-                      <div class="image">
-                        <img
-                          data-src="img/terms/term-2.webp"
-                          src="img/terms/placeholder-400x200.png"
-                          alt="course-1"
-                          width="210"
-                          height="150"
-                          class="swiper-lazy"
-                        />
-                      </div>
-
-                      <div class="course-item-content">
-                        <h3 class="title">كورس التاريخ</h3>
-                        <p class="course-stage">الثانى الثانوى</p>
-                        <br>
-                        <p class="teacher">أ / إسلام القيصر</p>
-                        <br>
-                        <p class="price-tag">360 LE</p>
-                      </div>
-
-                    </a>
-                  </div>
-
-                  <div class="swiper-slide">
-                    <a href="#" class="course-item dev-link">
-                      
-                      <div class="image">
-                        <img
-                          data-src="img/terms/term-3.jpg"
-                          src="img/terms/placeholder-400x200.png"
-                          alt="course-1"
-                          width="210"
-                          height="150"
-                          class="swiper-lazy"
-                        />
-                      </div>
-
-                      <div class="course-item-content">
-                        <h3 class="title">كورس الرياضيات لغات</h3>
-                        <p class="course-stage">الثالث الثانوى</p>
-                        <br>
-                        <p class="teacher">أ / محمد شحاتة</p>
-                        <br>
-                        <p class="price-tag">650 LE</p>
-                      </div>
-
-                    </a>
-                  </div>
-
-                  <div class="swiper-slide">
-                    <a href="#" class="course-item dev-link">
-                      
-                      <div class="image">
-                        <img
-                          data-src="img/terms/term-4.jpg"
-                          src="img/terms/placeholder-400x200.png"
-                          alt="course-1"
-                          width="210"
-                          height="150"
-                          class="swiper-lazy"
-                        />
-                      </div>
-
-                      <div class="course-item-content">
-                        <h3 class="title">كورس الجيولوجيا</h3>
-                        <p class="course-stage">الثالث الثانوى</p>
-                        <br>
-                        <p class="teacher">أ / حميدة أحمد</p>
-                        <br>
-                        <p class="price-tag">400 LE</p>
-                      </div>
-
-                    </a>
-                  </div>
-                </div>
-
-                <div class="swiper-button-next courses-next"></div>
-                <div class="swiper-button-prev courses-prev"></div>
-              </div>
-            </section>
-
-            <!-- Student Reviews -->
-            <section class="swiper students-reviews mb-3" data-swiper="reviews">
-              <div class="section-heading">
-                <h2 class="heading-title">آراء بعض طلابنا</h2>
-              </div>
-              
-              <div class="swiper-wrapper">
-                
-                <div class="swiper-slide">
-                  <div class="review-item">
-                    <img
-                      data-src="img/Hadary/Home-Banners/review-1.jpg"
-                      src="img/Hadary/Home-Banners/placeholder.jpg"
-                      width="400"
-                      height="200"
-                      alt="review-1"
-                      class="swiper-lazy"
-                    />
-                  </div>
-                </div>
-
-                <div class="swiper-slide">
-                  <div class="review-item">
-                    <img
-                      data-src="img/Hadary/Home-Banners/review-2.jpg"
-                      src="img/Hadary/Home-Banners/placeholder.jpg"
-                      width="400"
-                      height="200"
-                      alt="review-2"
-                      class="swiper-lazy"
-                    />
-                  </div>
-                </div>
-
-                <div class="swiper-slide">
-                  <div class="review-item">
-                    <img
-                      data-src="img/Hadary/Home-Banners/review-3.jpg"
-                      src="img/Hadary/Home-Banners/placeholder.jpg"
-                      width="400"
-                      height="200"
-                      alt="review-3"
-                      class="swiper-lazy"
-                    />
-                  </div>
-                </div>
-
-                <div class="swiper-slide">
-                  <div class="review-item">
-                    <img
-                      data-src="img/Hadary/Home-Banners/review-4.jpg"
-                      src="img/Hadary/Home-Banners/placeholder.jpg"
-                      width="400"
-                      height="200"
-                      alt="review-4"
-                      class="swiper-lazy"
-                    />
-                  </div>
-                </div>
-
-                <div class="swiper-slide">
-                  <div class="review-item">
-                    <img
-                      data-src="img/Hadary/Home-Banners/review-5.jpg"
-                      src="img/Hadary/Home-Banners/placeholder.jpg"
-                      width="400"
-                      height="200"
-                      alt="review-5"
-                      class="swiper-lazy"
-                    />
-                  </div>
-                </div>
-
-              </div>
-            </section>
-
-            <div class="footer-note">
-              - الطريق إلى اﻹمتحان مع راجع أونلاين -
             </div>
-
           </div>
+
+      </main>
+      
+    <!-- Bottom Navigation -->
+      <!-- <div class="bottom-navigation">
+        <div class="container">
+          
+          <a href="home.html" class="buttom-nav-link active">
+            <i class="fas fa-home nav-icon"></i>
+            <span>الرئيسية</span>
+          </a>
+
+          <a href="stage-courses.html" class="buttom-nav-link">
+            <i class="fas fa-book-open nav-icon"></i>
+            <span>المواد الدراسية</span>
+          </a>
+
+          <a href="about.html" class="buttom-nav-link">
+            <i class="fas fa-users nav-icon"></i>
+            <span>من نحن</span>
+          </a>
+
+          <a href="profile.html" class="buttom-nav-link">
+            <i class="fas fa-comments nav-icon"></i>
+            <span>تواصل معنا</span>
+          </a>
+          
         </div>
+      </div> -->
 
-    </main>
-    
-  <!-- Bottom Navigation -->
-    <!-- <div class="bottom-navigation">
-      <div class="container">
-        
-        <a href="home.html" class="buttom-nav-link active">
-          <i class="fas fa-home nav-icon"></i>
-          <span>الرئيسية</span>
-        </a>
+      <div class="bottom-navigation">
+        <div class="container">
+          
+          <a href="home.html" class="buttom-nav-link active">
+            <i class="fas fa-home nav-icon"></i>
+            <span>الرئيسية</span>
+          </a>
 
-        <a href="stage-courses.html" class="buttom-nav-link">
-          <i class="fas fa-book-open nav-icon"></i>
-          <span>المواد الدراسية</span>
-        </a>
+          <a href="#" class="buttom-nav-link dev-link">
+            <i class="fas fa-book-open nav-icon"></i>
+            <span>المواد الدراسية</span>
+          </a>
 
-        <a href="about.html" class="buttom-nav-link">
-          <i class="fas fa-users nav-icon"></i>
-          <span>من نحن</span>
-        </a>
+          <a href="#" class="buttom-nav-link dev-link">
+            <i class="fas fa-users nav-icon"></i>
+            <span>من نحن</span>
+          </a>
 
-        <a href="profile.html" class="buttom-nav-link">
-          <i class="fas fa-comments nav-icon"></i>
-          <span>تواصل معنا</span>
-        </a>
-        
+          <a href="#" class="buttom-nav-link dev-link">
+            <i class="fas fa-comments nav-icon"></i>
+            <span>تواصل معنا</span>
+          </a>
+          
+        </div>
       </div>
-    </div> -->
 
-    <div class="bottom-navigation">
-      <div class="container">
-        
-        <a href="home.html" class="buttom-nav-link active">
-          <i class="fas fa-home nav-icon"></i>
-          <span>الرئيسية</span>
-        </a>
 
-        <a href="#" class="buttom-nav-link dev-link">
-          <i class="fas fa-book-open nav-icon"></i>
-          <span>المواد الدراسية</span>
-        </a>
-
-        <a href="#" class="buttom-nav-link dev-link">
-          <i class="fas fa-users nav-icon"></i>
-          <span>من نحن</span>
-        </a>
-
-        <a href="#" class="buttom-nav-link dev-link">
-          <i class="fas fa-comments nav-icon"></i>
-          <span>تواصل معنا</span>
-        </a>
-        
+      <!--Page loader DOM Elements. Requared all pages-->
+      <div class="sweet-loader">
+        <div class="box">
+          <img
+            src="img/Hadary/Logo1.png"
+            width="200"
+            height="140"
+            alt="Rage3 Online logo"
+            class="logo smooth"
+          />
+        </div>
       </div>
+
+      <!-- JQuery library file. requared all pages -->
+      <script src="plugins/jquery-3.2.1.min.js"></script>
+      <!-- Swiper Slider -->
+      <script src="plugins/swiper/swiper-bundle.min.js" defer></script>
+      <!-- Floating Action Button -->
+      <script src="plugins/collapzion-fab/js/collapzion.js" defer></script>
+      <!-- Template global script file. requared all pages -->
+      <script src="js/global.script.js"></script>
+      <!-- Page Script -->
+      <script src="js/home.js" defer></script>
     </div>
 
-
-    <!--Page loader DOM Elements. Requared all pages-->
-    <div class="sweet-loader">
-      <div class="box">
-        <img
-          src="img/Hadary/Logo1.png"
-          width="200"
-          height="140"
-          alt="Rage3 Online logo"
-          class="logo smooth"
-        />
-      </div>
-    </div>
-
-    <!-- JQuery library file. requared all pages -->
-    <script src="plugins/jquery-3.2.1.min.js"></script>
-    <!-- Swiper Slider -->
-    <script src="plugins/swiper/swiper-bundle.min.js" defer></script>
-    <!-- Floating Action Button -->
-    <script src="plugins/collapzion-fab/js/collapzion.js" defer></script>
-    <!-- Template global script file. requared all pages -->
-    <script src="js/global.script.js"></script>
-    <!-- Page Script -->
-    <script src="js/home.js" defer></script>
   </body>
 </html>

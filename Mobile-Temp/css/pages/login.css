@@ -14,18 +14,11 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
-  overflow: hidden; 
-  background-color: #f0f2f5; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .app {
   width: 100%;
-  max-width: 400px; 
   height: 100%;
-  max-height: 850px; 
   background-color: var(--bg-white);
   display: flex;
   flex-direction: column;
