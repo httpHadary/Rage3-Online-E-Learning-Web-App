@@ -598,4 +598,53 @@ $(document).ready(function () {
         exitFullscreen();
     });
 
+      /* =========================
+        PINCH TO ZOOM (MOBILE)
+      ========================= */
+
+      let lastTouchDistance = null;
+
+      $viewport.on('touchstart', function (e) {
+
+          if (e.touches.length === 2) {
+
+              const dx = e.touches[0].pageX - e.touches[1].pageX;
+              const dy = e.touches[0].pageY - e.touches[1].pageY;
+
+              lastTouchDistance = Math.hypot(dx, dy);
+          }
+      });
+
+
+      $viewport.on('touchmove', function (e) {
+
+          if (e.touches.length === 2) {
+
+              e.preventDefault();
+
+              const dx = e.touches[0].pageX - e.touches[1].pageX;
+              const dy = e.touches[0].pageY - e.touches[1].pageY;
+
+              const distance = Math.hypot(dx, dy);
+
+              if (lastTouchDistance) {
+
+                  const scale = distance / lastTouchDistance;
+
+                  zoomScale *= scale;
+                  zoomScale = Math.min(Math.max(zoomScale, 0.2), 5);
+
+                  applyZoom();
+              }
+
+              lastTouchDistance = distance;
+          }
+      });
+
+
+      $viewport.on('touchend touchcancel', function () {
+
+          lastTouchDistance = null;
+      });
+
 });
