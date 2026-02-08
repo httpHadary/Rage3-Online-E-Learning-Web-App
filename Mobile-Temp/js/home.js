@@ -269,3 +269,333 @@ document.querySelectorAll(".dev-link").forEach(link => {
 closeDevOverlay.addEventListener("click", () => {
   devOverlay.classList.remove("active");
 });
+
+
+
+
+$(document).ready(function () {
+
+    let pdfDoc = null;
+    let zoomScale = 1;
+    let currentRenderTask = null;
+
+    const canvas = document.getElementById('pdf-canvas');
+    const ctx = canvas.getContext('2d');
+
+    if (!ctx) return;
+
+    const $viewport = $('.pdf-viewport');
+
+
+/* =========================
+   LOAD PDF (CACHED)
+========================= */
+
+    function loadPDF(url) {
+
+        if (pdfDoc) {
+            renderPage();
+            return;
+        }
+
+        pdfjsLib.getDocument(url).promise
+            .then(pdf => {
+
+                pdfDoc = pdf;
+                renderPage();
+
+            })
+            .catch(console.error);
+    }
+
+
+/* =========================
+   RENDER
+========================= */
+
+    function renderPage() {
+
+        if (!pdfDoc) return;
+
+        pdfDoc.getPage(1).then(page => {
+
+            if (currentRenderTask) {
+                currentRenderTask.cancel();
+            }
+
+            const viewport = page.getViewport({ scale: 2 });
+
+            canvas.width  = viewport.width;
+            canvas.height = viewport.height;
+
+            currentRenderTask = page.render({
+                canvasContext: ctx,
+                viewport
+            });
+
+            currentRenderTask.promise.then(() => {
+
+                currentRenderTask = null;
+                fitToContainer();
+
+            });
+
+        });
+    }
+
+
+/* =========================
+   FIT
+========================= */
+
+    function fitToContainer() {
+
+        const w = $viewport.width();
+
+        zoomScale = (w * 0.9) / canvas.width;
+        zoomScale = Math.min(Math.max(zoomScale, 0.2), 2);
+
+        applyZoom();
+    }
+
+
+/* =========================
+   ZOOM
+========================= */
+
+    function applyZoom() {
+
+        const w = canvas.width  * zoomScale;
+        const h = canvas.height * zoomScale;
+
+        $('#pdf-canvas').css({
+            width:  w + 'px',
+            height: h + 'px'
+        });
+
+        $('#zoom-level').text(Math.round(zoomScale * 100) + '%');
+    }
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+    $('#zoom-in').click(() => {
+
+        zoomScale = Math.min(zoomScale * 1.1, 5);
+        applyZoom();
+    });
+
+
+    $('#zoom-out').click(() => {
+
+        zoomScale = Math.max(zoomScale * 0.9, 0.2);
+        applyZoom();
+    });
+
+
+/* Ctrl + Wheel Zoom */
+
+    $viewport.on('wheel', function (e) {
+
+        if (!e.ctrlKey) return;
+
+        e.preventDefault();
+
+        zoomScale *= (e.originalEvent.deltaY > 0 ? 0.9 : 1.1);
+        zoomScale = Math.min(Math.max(zoomScale, 0.2), 5);
+
+        applyZoom();
+    });
+
+
+/* =========================
+   FULLSCREEN
+========================= */
+
+    $('#fullscreen-btn').click(function (e) {
+
+        e.stopPropagation();
+
+        $viewport.hasClass('is-fullscreen')
+            ? exitFullscreen()
+            : enterFullscreen();
+    });
+
+
+/* =========================
+   DRAG / PAN
+========================= */
+
+    let isDragging = false;
+    let startX, startY, startLeft, startTop;
+    let moved = false;
+
+
+    function canDrag() {
+
+        const canvasWidth  = canvas.getBoundingClientRect().width;
+        const canvasHeight = canvas.getBoundingClientRect().height;
+
+        return (
+            canvasWidth  > $viewport.width() ||
+            canvasHeight > $viewport.height() ||
+            $viewport.hasClass('is-fullscreen')
+        );
+    }
+
+
+    $viewport.add('#pdf-canvas').on('mousedown touchstart', function (e) {
+
+        // Only left click
+        if (e.type === 'mousedown' && e.button !== 0) return;
+
+        if (!canDrag()) return;
+
+        e.preventDefault();
+
+        const point = e.type === 'touchstart'
+            ? e.originalEvent.touches[0]
+            : e;
+
+        isDragging = true;
+        moved = false;
+
+        $viewport.addClass('dragging');
+
+        startX = point.pageX;
+        startY = point.pageY;
+
+        startLeft = $viewport.scrollLeft();
+        startTop  = $viewport.scrollTop();
+    });
+
+
+    $(document).on('mousemove touchmove', function (e) {
+
+        if (!isDragging) return;
+
+        const point = e.type === 'touchmove'
+            ? e.originalEvent.touches[0]
+            : e;
+
+        if (
+            Math.abs(point.pageX - startX) > 5 ||
+            Math.abs(point.pageY - startY) > 5
+        ) {
+            moved = true;
+        }
+
+        const dx = (point.pageX - startX) * 1.3;
+        const dy = (point.pageY - startY) * 1.3;
+
+        $viewport.scrollLeft(startLeft - dx);
+        $viewport.scrollTop(startTop  - dy);
+    });
+
+
+    $(document).on('mouseup touchend touchcancel', function () {
+
+        isDragging = false;
+        $viewport.removeClass('dragging');
+    });
+
+
+/* =========================
+   POPUP
+========================= */
+
+    $('.popup-trigger').magnificPopup({
+
+        type: 'inline',
+        midClick: true,
+
+        callbacks: {
+
+            open() {
+
+                loadPDF('img/Hadary/Schedules/Schedule Demo PDF.pdf');
+            },
+
+            close() {
+
+                resetViewer();
+            }
+        }
+    });
+
+
+/* =========================
+   RESET
+========================= */
+
+    function resetViewer() {
+
+        $viewport.removeClass('is-fullscreen');
+
+        $('body').css('overflow', '');
+
+        zoomScale = 1;
+
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+
+        $('#zoom-level').text('100%');
+    }
+
+
+/* =========================
+   RESIZE
+========================= */
+
+    $(window).on('resize', function () {
+
+        if (!$viewport.hasClass('is-fullscreen')) {
+            fitToContainer();
+        }
+    });
+
+
+/* =========================
+   FULLSCREEN HELPERS
+========================= */
+
+    function enterFullscreen() {
+
+        $viewport.addClass('is-fullscreen');
+
+        $('body').css('overflow','hidden');
+
+        zoomScale = (window.innerHeight * 0.9) / canvas.height;
+
+        applyZoom();
+
+        $viewport.scrollTop(0).scrollLeft(0);
+    }
+
+    function exitFullscreen() {
+
+        $viewport.removeClass('is-fullscreen');
+
+        $('body').css('overflow','');
+
+        fitToContainer();
+
+        $viewport.scrollTop(0).scrollLeft(0);
+    }
+
+
+/* =========================
+   CLICK TO EXIT FULLSCREEN
+========================= */
+
+    $viewport.on('click', function () {
+
+        if (!$viewport.hasClass('is-fullscreen')) return;
+
+        if (moved) return;
+
+        exitFullscreen();
+    });
+
+});
