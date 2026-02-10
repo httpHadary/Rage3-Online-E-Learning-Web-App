@@ -512,7 +512,7 @@ $(document).ready(function () {
 
             open() {
 
-              loadPDF('../img/Hadary/Schedules/Schedule Demo PDF.pdf');
+              loadPDF('/Rage3-Online-E-Learning-Web-App/Mobile-Temp/img/Hadary/Schedules/Schedule Demo PDF.pdf');
             },
 
             close() {
