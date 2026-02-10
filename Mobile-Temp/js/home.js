@@ -154,7 +154,6 @@ $(window).on("load", function () {
 
 });
 
-
 /* ===============================
    5. UI Logic (Sidebar & Navbars)
 =============================== */
@@ -269,8 +268,6 @@ document.querySelectorAll(".dev-link").forEach(link => {
 closeDevOverlay.addEventListener("click", () => {
   devOverlay.classList.remove("active");
 });
-
-
 
 
 $(document).ready(function () {
@@ -515,7 +512,7 @@ $(document).ready(function () {
 
             open() {
 
-                loadPDF('img/Hadary/Schedules/Schedule Demo PDF.pdf');
+              loadPDF('/Mobile-Temp/img/Hadary/Schedules/Schedule Demo PDF.pdf');
             },
 
             close() {

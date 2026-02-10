@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Rage3 Online</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/Mobile-Temp/img/Hadary/favicon2.png">
+    <!-- Fontawesome font file css -->
+    <link rel="stylesheet" href="/Mobile-Temp/css/font-awesome/css/all.min.css" />
+    <!-- Floating Action Button -->
+    <link rel="stylesheet" href="/Mobile-Temp/plugins/collapzion-fab/css/collapzion.css" />
+    <!-- Template global css file. Requared all pages -->
+    <link rel="stylesheet" href="/Mobile-Temp/css/global.style.css" />
+    <!-- page Style -->
+    <link rel="stylesheet" href="/Mobile-Temp/css/pages/pdf.css" />
+    <!-- Loading Tajwal Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+  </head>
+
+  <body>
+
+  <!-- PDF Download Overlay -->
+    <div class="search-overlay" id="pdfDownloadOverlay">
+      <div class="search-container join-container">
+
+        <div class="section-heading mb-2">
+          <h2 class="heading-title" style="font-size:1.2rem">
+            تحميل الملف
+          </h2>
+        </div>
+
+        <button
+          class="close-search"
+          id="closePdfOverlay">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <div class="pdf-download-view">
+          <iframe
+            id="pdf-download-frame"
+            src=""
+            width="100%"
+            height="100%"
+            style="border:none;">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mobile-shell">
+      <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+
+          <div class="search-input-wrapper">
+            <input type="text" placeholder="ما الذي تبحث عنه؟" id="searchInput">
+
+            <button class="close-search" id="closeSearch">
+              <i class="fas fa-times"></i>
+            </button>
+
+          </div>
+
+          <div class="search-results"></div>
+
+        </div>
+      </div>
+
+      <div class="search-overlay" id="joinOverlay">
+        <div class="search-container join-container">
+          <div class="section-heading mb-2">
+            <h2 class="heading-title" style="font-size: 1.2rem;">تفعيل كورس جديد</h2>
+          </div>
+          <div class="search-input-wrapper">
+            <input type="text" placeholder="أدخل كود التفعيل هنا..." id="courseCodeInput">
+            <button class="close-search" id="closeJoin">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <button class="btn-submit-code" id="submitCodeBtn">تفعيل الآن</button>
+          <div id="joinStatus" class="search-results"></div>
+        </div>
+      </div>
+
+      <div class="search-overlay" id="devOverlay">
+        <div class="search-container join-container">
+          
+          <div class="section-heading mb-2">
+            <h2 class="heading-title" style="font-size: 1.2rem;">
+              تحت التطوير
+            </h2>
+          </div>
+
+          <p class="dev-message">
+            هذه الميزة ما زالت قيد التطوير وستتوفر قريبًا بإذن الله.
+          </p>
+
+          <button class="btn-submit-code" id="closeDevOverlay">
+            حسنًا
+          </button>
+        </div>
+      </div>
+
+
+      <nav class="navbar themed-top-bar">
+        <div class="bar-effects"></div>
+        
+        <div class="nav-content">
+          <div class="nav-side-group">
+            <a href="#" class="menu-trigger">
+              <i class="fas fa-bars"></i>
+            </a>
+          </div>
+          
+          <div class="top-logo">
+            <img src="/Mobile-Temp/img/Hadary/Logo1.png" alt="logo" />
+          </div>
+
+          <div class="nav-side-group right">
+            <div class="top-actions">
+              <button class="action-btn"><i class="fas fa-search"></i></button>
+              <button class="action-btn"><i class="fas fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <main class="app">
+
+        <aside class="side-menu">
+
+          <a href="#" class="dev-link">
+            <div class="side-menu-header">
+              <img src="/Mobile-Temp/img/Hadary/avatar.png" alt="User Avatar" class="user-avatar">
+
+              <div class="user-info">
+                <h3>Ahmed Elhadary</h3>
+                <p>الصف الثالث الثانوي</p>
+              </div>
+            </div>
+          </a>
+
+            <nav class="side-menu-links">
+              <div class="menu-main">
+                <a href="#" class="dev-link"><i class="fas fa-user-circle"></i> الملف الشخصى</a>
+                <a href="#" class="dev-link"><i class="fas fa-wallet"></i> الاشتراكات</a>
+                <a href="#" class="dev-link"><i class="fas fa-plus"></i>إضافة كود</a>
+                <a href="#" class="dev-link"><i class="fas fa-key"></i> تغيير كلمة السر</a>
+              </div>
+
+              <div class="menu-footer">
+                <a href="#" class="dev-link"><i class="fas fa-share"></i> شارك التطبيق</a>
+                <a href="/Mobile-Temp/pages/login-registering/login.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+              </div>
+            </nav>
+
+        </aside>
+        <div class="menu-overlay"></div>
+
+        <div id="app-container" class="app-container">
+
+          <div class="content">
+            <div class="container">
+
+              <section class="pdf-page">
+
+                <div class="section-heading">
+                  <h2 id="pdf-title" class="heading-title"></h2>
+
+                  <button onclick="goBack()"
+                    class="btn section-action back-btn">
+                    رجوع
+                  </button>
+                </div>
+
+                <div class="pdf-toolbar">
+                    <a id="download-pdf"
+                      class="pdf-btn download-btn"
+                      download>
+                      <i class="fas fa-download"></i>
+                    </a>
+                </div>
+
+                <div class="pdf-wrapper">
+                  <canvas id="pdf-canvas"></canvas>
+                </div>
+
+              </section>
+
+              <div class="footer-note">
+                - الطريق إلى اﻹمتحان مع راجع أونلاين -
+              </div>
+
+            </div>
+          </div>
+
+      </main>
+      
+    <!-- Bottom Navigation -->
+      <div class="bottom-navigation">
+        <div class="container">
+          
+          <a href="/Mobile-Temp/pages/home page/home.html" class="buttom-nav-link">
+            <i class="fas fa-home nav-icon"></i>
+            <span>الرئيسية</span>
+          </a>
+
+          <a href="subjects.html" class="buttom-nav-link active">
+            <i class="fas fa-book-open nav-icon"></i>
+            <span>المواد الدراسية</span>
+          </a>
+
+          <a href="#" class="buttom-nav-link dev-link">
+            <i class="fas fa-users nav-icon"></i>
+            <span>من نحن</span>
+          </a>
+
+          <a href="#" class="buttom-nav-link dev-link">
+            <i class="fas fa-comments nav-icon"></i>
+            <span>تواصل معنا</span>
+          </a>
+          
+        </div>
+      </div>
+
+
+      <!--Page loader DOM Elements. Requared all pages-->
+      <div class="sweet-loader">
+        <div class="box">
+          <img
+            src="/Mobile-Temp/img/Hadary/Logo1.png"
+            width="200"
+            height="140"
+            alt="Rage3 Online logo"
+            class="logo smooth"
+          />
+        </div>
+      </div>
+
+      <!-- JQuery library file. requared all pages -->
+      <script src="/Mobile-Temp/plugins/jquery-3.2.1.min.js"></script>
+      <!-- Floating Action Button -->
+      <script src="/Mobile-Temp/plugins/collapzion-fab/js/collapzion.js" defer></script>
+      <!-- Template global script file. requared all pages -->
+      <script src="/Mobile-Temp/js/global.script.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+      <script src="https://unpkg.com/@panzoom/panzoom/dist/panzoom.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+      <!-- Page Script -->
+      <script src="/Mobile-Temp/js/pdf.js" defer></script>
+    </div>
+
+  </body>
+</html>

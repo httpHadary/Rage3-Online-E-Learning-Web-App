@@ -312,4 +312,17 @@ $(document).ready(function() {
             }, 400); 
         }
     });
+
+    /* ===============================
+      FORCE ANIMATION ON BACK
+    =============================== */
+
+  window.addEventListener("pageshow", function (e) {
+
+    if (e.persisted) {
+      document.querySelector(".app")?.classList.remove("page-exit");
+    }
+
+  });
+
 });
