@@ -512,7 +512,7 @@ $(document).ready(function () {
 
             open() {
 
-              loadPDF('/Mobile-Temp/img/Hadary/Schedules/Schedule Demo PDF.pdf');
+              loadPDF('../img/Hadary/Schedules/Schedule Demo PDF.pdf');
             },
 
             close() {

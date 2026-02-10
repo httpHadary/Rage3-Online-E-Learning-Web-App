@@ -38,7 +38,7 @@
 //         $(".login-card").addClass("card-exit");
         
 //         setTimeout(function () {
-//           window.location.href = "/Mobile-Temp/pages/home page/home.html";
+//           window.location.href = "../home page/home.html";
 //         }, 500);
 
 //       } else {
@@ -88,7 +88,7 @@ $(function () {
       $(".login-card").addClass("card-exit");
       
       setTimeout(function () {
-        window.location.href = "/Mobile-Temp/pages/home page/home.html";
+        window.location.href = "../home page/home.html";
       }, 500);
 
     } else {
@@ -103,7 +103,7 @@ $(function () {
     $(".login-card").addClass("card-exit");
     
     setTimeout(function () {
-      window.location.href = "/Mobile-Temp/pages/home page/home.html";
+      window.location.href = "../home page/home.html";
     }, 500);
   });
 
@@ -113,7 +113,7 @@ $(function () {
     $(".login-card").addClass("card-exit");
     
     setTimeout(function () {
-      window.location.href = "/Mobile-Temp/pages/home page/home.html";
+      window.location.href = "../home page/home.html";
     }, 500);
   });
 
