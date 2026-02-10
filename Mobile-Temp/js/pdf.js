@@ -200,12 +200,12 @@ $(function () {
 
           f1: {
             title: "ملف القواعد PDF",
-            url: "../../PDFs/pdfDemo.pdf"
+            url: "../../../PDFs/pdfDemo.pdf"
           },
 
           f2: {
             title: "واجب تدريبي",
-            url: "../../PDFs/pdfDemo.pdf"
+            url: "../../../PDFs/pdfDemo.pdf"
           }
 
         }
@@ -221,7 +221,7 @@ $(function () {
 
         f1: {
           title: "ملف المناخ",
-          url: "../../PDFs/pdfDemo.pdf"
+          url: "../../../PDFs/pdfDemo.pdf"
         }
 
       }
