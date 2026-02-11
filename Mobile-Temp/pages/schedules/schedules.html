@@ -15,7 +15,7 @@
     <!-- Template global css file. Requared all pages -->
     <link rel="stylesheet" href="../../css/global.style.css" />
     <!-- page Style -->
-    <link rel="stylesheet" href="../../css/pages/subjects.css" />
+    <link rel="stylesheet" href="../../css/pages/schedules.css" />
     <!-- Loading Tajwal Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -140,77 +140,68 @@
           <div class="content">
             <div class="container">
 
-              <section class="section-subjects mb-3">
-                
+              <section class="schedule-section mb-3">
+
                 <div class="section-heading">
-                  <h2 class="heading-title">المواد الدراسية</h2>
+                  <h2 class="heading-title">الجداول الدراسية</h2>
                 </div>
 
-                <div class="subjects-wrapper">
+                <div class="schedule-list">
 
-                  <a href="branches.html?subject=arabic" class="subject-item">
-                    <div class="image">
-                      <img
-                        src="../../img/terms/term-1.webp"
-                        alt="term-1"
-                        width="210"
-                        height="150"
-                      />
+                  <a href="schedule-pdf.html?pdf=pdfDemo.pdf&title=جدول شهر يناير"
+                    class="schedule-card popup-trigger">
+
+                    <div class="schedule-image">
+                      <img src="../../img/terms/term-1.webp" alt="January">
                     </div>
 
-                    <div class="subject-item-content">
-                      <h3 class="title">اللغة العربية</h3>
-                      <p class="courses">6 مدرسين</p>
+                    <div class="schedule-content">
+                      <h3 class="schedule-title">جدول شهر</h3>
+                      <p class="schedule-month">يناير</p>
                     </div>
+
                   </a>
 
-                  <a href="branches.html?subject=english" class="subject-item">
-                    <div class="image">
-                      <img
-                        src="../../img/terms/term-2.webp"
-                        alt="term-1"
-                        width="210"
-                        height="150"
-                      />
+                  <a href="schedule-pdf.html?pdf=pdfDemo.pdf&title=جدول شهر فبراير"
+                    class="schedule-card popup-trigger">
+
+                    <div class="schedule-image">
+                      <img src="../../img/terms/term-2.webp" alt="February">
                     </div>
 
-                    <div class="subject-item-content">
-                      <h3 class="title">اللغة اﻹنجليزية</h3>
-                      <p class="courses">8 مدرسين</p>
-                    </div>
-                  </a>
-                  
-
-                  <a href="chapters.html?subject=geography" class="subject-item">
-                    <div class="image">
-                      <img
-                        src="../../img/terms/term-3.jpg"
-                        alt="term-1"
-                        width="210"
-                        height="150"
-                      />
+                    <div class="schedule-content">
+                      <h3 class="schedule-title">جدول شهر</h3>
+                      <p class="schedule-month">فبراير</p>
                     </div>
 
-                    <div class="subject-item-content">
-                      <h3 class="title">الجغرافيا</h3>
-                      <p class="courses">4 مدرسين</p>
-                    </div>
                   </a>
 
-                  <a href="branches.html?subject=maths" class="subject-item">
-                    <div class="image">
-                      <img
-                        src="../../img/terms/term-4.jpg"
-                        alt="term-1"
-                        width="210"
-                        height="150"
-                      />
+                  <a href="schedule-pdf.html?pdf=pdfDemo.pdf&title=جدول شهر مارس"
+                    class="schedule-card popup-trigger">
+
+                    <div class="schedule-image">
+                      <img src="../../img/terms/term-3.jpg" alt="March">
                     </div>
 
-                    <div class="subject-item-content">
-                      <h3 class="title">الرياضيات</h3>
-                      <p class="courses">7 مدرسين</p>
+                    <div class="schedule-content">
+                      <h3 class="schedule-title">جدول شهر</h3>
+                      <p class="schedule-month">مارس</p>
                     </div>
+
+                  </a>
+
+                  <a href="schedule-pdf.html?pdf=pdfDemo.pdf&title=جدول شهر إبريل"
+                    class="schedule-card popup-trigger">
+
+                    <div class="schedule-image">
+                      <img src="../../img/terms/term-4.jpg" alt="April">
+                    </div>
+
+                    <div class="schedule-content">
+                      <h3 class="schedule-title">جدول شهر</h3>
+                      <p class="schedule-month">إبريل</p>
+                    </div>
+
                   </a>
 
                 </div>
@@ -234,12 +225,12 @@
             <span>الرئيسية</span>
           </a>
 
-          <a href="subjects.html" class="buttom-nav-link active">
+          <a href="../subjects/subjects.html" class="buttom-nav-link">
             <i class="fas fa-book-open nav-icon"></i>
             <span>المواد الدراسية</span>
           </a>
 
-          <a href="../schedules/schedules.html" class="buttom-nav-link">
+          <a href="schedules.html" class="buttom-nav-link active">
             <i class="fas fa-clipboard-list nav-icon"></i>
             <span>الجداول الدراسية</span>
           </a>
@@ -281,7 +272,7 @@
       <script src="https://unpkg.com/@panzoom/panzoom/dist/panzoom.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
       <!-- Page Script -->
-      <script src="../../js/subjects.js" defer></script>
+      <script src="../../js/schedules.js" defer></script>
     </div>
 
   </body>

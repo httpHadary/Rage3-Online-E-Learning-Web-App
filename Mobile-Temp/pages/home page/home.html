@@ -315,14 +315,16 @@
                 
                 <div class="section-heading">
                   <h2 class="heading-title">الجداول الدراسية</h2>
-                  <button class="btn section-action dev-link">المزيد</button>
+                  <a href="../../pages/schedules/schedules.html" class="btn section-action page-link">
+                    المزيد
+                  </a>
                 </div>
 
                 <div class="swiper courses-wrapper" data-swiper="courses">
                   <div class="swiper-wrapper">
                     
                     <div class="swiper-slide">
-                      <a href="#schedule-popup" class="course-item popup-trigger">
+                      <a href="../schedules/schedule-pdf.html?pdf=pdfDemo.pdf&title=جدول شهر يناير" class="course-item page-link">
                         
                         <div class="image">
                           <img
@@ -344,7 +346,7 @@
                     </div>
 
                     <div class="swiper-slide">
-                      <a href="#schedule-popup" class="course-item popup-trigger">
+                      <a href="../schedules/schedule-pdf.html?pdf=pdfDemo.pdf&title=جدول شهر فبراير" class="course-item page-link">
                         
                         <div class="image">
                           <img
@@ -366,7 +368,7 @@
                     </div>
 
                     <div class="swiper-slide">
-                      <a href="#schedule-popup" class="course-item popup-trigger">
+                      <a href="../schedules/schedule-pdf.html?pdf=pdfDemo.pdf&title=جدول شهر مارس" class="course-item page-link">
                         
                         <div class="image">
                           <img
@@ -388,7 +390,7 @@
                     </div>
 
                     <div class="swiper-slide">
-                      <a href="#schedule-popup" class="course-item popup-trigger">
+                      <a href="../schedules/schedule-pdf.html?pdf=pdfDemo.pdf&title=جدول شهر إبريل" class="course-item page-link">
                         
                         <div class="image">
                           <img
@@ -414,29 +416,6 @@
                   <div class="swiper-button-prev courses-prev"></div>
                 </div>
               </section>
-
-            <!-- Schedule Popup-->
-              <div id="schedule-popup" class="mfp-hide pdf-popup">
-
-                  <!-- Header -->
-                  <div class="pdf-header">
-                      <div class="pdf-controls">
-                          <button id="fullscreen-btn">⛶</button>
-                          <button id="zoom-out">−</button>
-                          <span id="zoom-level">100%</span>
-                          <button id="zoom-in">+</button>
-                      </div>
-                      <h2>January Schedule</h2>
-                  </div>
-
-                  <!-- Viewer -->
-                  <div class="pdf-viewport">
-                    <div class="pdf-center">
-                      <canvas id="pdf-canvas"></canvas>
-                    </div>
-                  </div>
-
-              </div>
 
               <!-- Student Reviews -->
               <section class="swiper students-reviews mb-3" data-swiper="reviews">
@@ -532,9 +511,14 @@
             <span>الرئيسية</span>
           </a>
 
-          <a href="../../pages/subjects/subjects.html" class="buttom-nav-link">
+          <a href="../subjects/subjects.html" class="buttom-nav-link">
             <i class="fas fa-book-open nav-icon"></i>
             <span>المواد الدراسية</span>
+          </a>
+
+          <a href="../schedules/schedules.html" class="buttom-nav-link">
+            <i class="fas fa-clipboard-list nav-icon"></i>
+            <span>الجداول الدراسية</span>
           </a>
 
           <a href="#" class="buttom-nav-link dev-link">

@@ -15,7 +15,7 @@
     <!-- Template global css file. Requared all pages -->
     <link rel="stylesheet" href="../../css/global.style.css" />
     <!-- page Style -->
-    <link rel="stylesheet" href="../../css/pages/subjects.css" />
+    <link rel="stylesheet" href="../../css/pages/schedule-pdf.css" />
     <!-- Loading Tajwal Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -25,6 +25,35 @@
   </head>
 
   <body>
+
+  <!-- PDF Download Overlay -->
+    <div class="search-overlay" id="pdfDownloadOverlay">
+      <div class="search-container join-container">
+
+        <div class="section-heading mb-2">
+          <h2 class="heading-title" style="font-size:1.2rem">
+            تحميل الملف
+          </h2>
+        </div>
+
+        <button
+          class="close-search"
+          id="closePdfOverlay">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <div class="pdf-download-view">
+          <iframe
+            id="pdf-download-frame"
+            src=""
+            width="100%"
+            height="100%"
+            style="border:none;">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
 
     <div class="mobile-shell">
       <div class="search-overlay" id="searchOverlay">
@@ -140,80 +169,29 @@
           <div class="content">
             <div class="container">
 
-              <section class="section-subjects mb-3">
-                
+              <section class="pdf-page">
+
                 <div class="section-heading">
-                  <h2 class="heading-title">المواد الدراسية</h2>
+                  <h2 id="pdf-title" class="heading-title"></h2>
+
+                  <button onclick="goBack()"
+                    class="btn section-action back-btn">
+                    رجوع
+                  </button>
                 </div>
 
-                <div class="subjects-wrapper">
-
-                  <a href="branches.html?subject=arabic" class="subject-item">
-                    <div class="image">
-                      <img
-                        src="../../img/terms/term-1.webp"
-                        alt="term-1"
-                        width="210"
-                        height="150"
-                      />
-                    </div>
-
-                    <div class="subject-item-content">
-                      <h3 class="title">اللغة العربية</h3>
-                      <p class="courses">6 مدرسين</p>
-                    </div>
-                  </a>
-
-                  <a href="branches.html?subject=english" class="subject-item">
-                    <div class="image">
-                      <img
-                        src="../../img/terms/term-2.webp"
-                        alt="term-1"
-                        width="210"
-                        height="150"
-                      />
-                    </div>
-
-                    <div class="subject-item-content">
-                      <h3 class="title">اللغة اﻹنجليزية</h3>
-                      <p class="courses">8 مدرسين</p>
-                    </div>
-                  </a>
-                  
-
-                  <a href="chapters.html?subject=geography" class="subject-item">
-                    <div class="image">
-                      <img
-                        src="../../img/terms/term-3.jpg"
-                        alt="term-1"
-                        width="210"
-                        height="150"
-                      />
-                    </div>
-
-                    <div class="subject-item-content">
-                      <h3 class="title">الجغرافيا</h3>
-                      <p class="courses">4 مدرسين</p>
-                    </div>
-                  </a>
-
-                  <a href="branches.html?subject=maths" class="subject-item">
-                    <div class="image">
-                      <img
-                        src="../../img/terms/term-4.jpg"
-                        alt="term-1"
-                        width="210"
-                        height="150"
-                      />
-                    </div>
-
-                    <div class="subject-item-content">
-                      <h3 class="title">الرياضيات</h3>
-                      <p class="courses">7 مدرسين</p>
-                    </div>
-                  </a>
-
+                <div class="pdf-toolbar">
+                    <a id="download-pdf"
+                      class="pdf-btn download-btn"
+                      download>
+                      <i class="fas fa-download"></i>
+                    </a>
                 </div>
+
+                <div class="pdf-wrapper">
+                  <canvas id="pdf-canvas"></canvas>
+                </div>
+
               </section>
 
               <div class="footer-note">
@@ -229,7 +207,7 @@
       <div class="bottom-navigation">
         <div class="container">
           
-          <a href="../home page/home.html" class="buttom-nav-link">
+          <a href="../../pages/home page/home.html" class="buttom-nav-link">
             <i class="fas fa-home nav-icon"></i>
             <span>الرئيسية</span>
           </a>
@@ -281,7 +259,7 @@
       <script src="https://unpkg.com/@panzoom/panzoom/dist/panzoom.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
       <!-- Page Script -->
-      <script src="../../js/subjects.js" defer></script>
+      <script src="../../js/schedule-pdf.js" defer></script>
     </div>
 
   </body>
