@@ -305,7 +305,7 @@ $(document).ready(function () {
   const courseInput = $('#courseCodeInput');
 
 
-  $(document).on('click', '.fa-plus', function (e) {
+  $(document).on('click', '.fa-plus, .open-join, .add-code-link', function (e) {
 
     e.preventDefault();
 

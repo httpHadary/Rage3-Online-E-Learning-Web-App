@@ -15,7 +15,7 @@
     <!-- Template global css file. Requared all pages -->
     <link rel="stylesheet" href="../../css/global.style.css" />
     <!-- page Style -->
-    <link rel="stylesheet" href="../../css/pages/subjects/pdf.css" />
+    <link rel="stylesheet" href="../../css/pages/about-us/about-us.css" />
     <!-- Loading Tajwal Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -25,35 +25,6 @@
   </head>
 
   <body>
-
-  <!-- PDF Download Overlay -->
-    <div class="search-overlay" id="pdfDownloadOverlay">
-      <div class="search-container join-container">
-
-        <div class="section-heading mb-2">
-          <h2 class="heading-title" style="font-size:1.2rem">
-            تحميل الملف
-          </h2>
-        </div>
-
-        <button
-          class="close-search"
-          id="closePdfOverlay">
-          <i class="fas fa-times"></i>
-        </button>
-
-        <div class="pdf-download-view">
-          <iframe
-            id="pdf-download-frame"
-            src=""
-            width="100%"
-            height="100%"
-            style="border:none;">
-          </iframe>
-        </div>
-
-      </div>
-    </div>
 
     <div class="mobile-shell">
       <div class="search-overlay" id="searchOverlay">
@@ -169,30 +140,128 @@
           <div class="content">
             <div class="container">
 
-              <section class="pdf-page">
+            <!-- About & Contact Section -->
+                <section class="about-page">
 
-                <div class="section-heading">
-                  <h2 id="pdf-title" class="heading-title"></h2>
+                <!-- About Us -->
+                    <div class="about-card">
+                        <div class="section-heading">
+                             <h2 class="heading-title">من نحن</h2>
+                        </div>
 
-                  <button onclick="goBack()"
-                    class="btn section-action back-btn">
-                    رجوع
-                  </button>
-                </div>
+                        <p class="about-text">
+                            منصة راجع أونلاين هي منصة تعليمية متخصصة في مساعدة طلاب المرحلة الثانوية
+                            على التفوق الدراسي من خلال محتوى مبسط، جداول منظمة، ومتابعة مستمرة.
+                        </p>
 
-                <div class="pdf-toolbar">
-                    <a id="download-pdf"
-                      class="pdf-btn download-btn"
-                      download>
-                      <i class="fas fa-download"></i>
-                    </a>
-                </div>
+                        <p class="about-text">
+                            هدفنا هو توفير تجربة تعليمية سهلة، حديثة، وفعالة تساعدك على الوصول
+                            لأفضل نتائج بإذن الله.
+                        </p>
 
-                <div class="pdf-wrapper">
-                  <canvas id="pdf-canvas"></canvas>
-                </div>
+                        <div class="about-stats">
 
-              </section>
+                            <div class="stat-box">
+                                <h3 class="counter" data-target="5000" data-plus="true">0</h3>
+                                <span>طالب</span>
+                            </div>
+
+                            <div class="stat-box">
+                                <h3 class="counter" data-target="100" data-plus="true">0</h3>
+                                <span>درس</span>
+                            </div>
+
+                            <div class="stat-box">
+                                <h3 class="counter" data-target="24">0</h3>
+                                <span>ساعة دعم</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                <!-- Usage Policy & Privacy -->
+                    <div class="policy-card">
+
+                      <div class="section-heading">
+                        <h2 class="heading-title">سياسة الاستخدام والخصوصية</h2>
+                      </div>
+
+                      <p class="policy-text">
+                        باستخدامك لمنصة راجع أونلاين، فإنك توافق على الالتزام بجميع القوانين
+                        والسياسات الخاصة بالاستخدام الآمن والمسؤول.
+                      </p>
+
+                      <p class="policy-text">
+                        نلتزم بحماية بياناتك الشخصية وعدم مشاركتها مع أي طرف ثالث
+                        دون موافقتك المسبقة.
+                      </p>
+
+                      <ul class="policy-list">
+
+                        <li>
+                          <i class="fas fa-check-circle"></i>
+                          الحفاظ على سرية بيانات الدخول.
+                        </li>
+
+                        <li>
+                          <i class="fas fa-check-circle"></i>
+                          عدم إساءة استخدام المحتوى التعليمي.
+                        </li>
+
+                        <li>
+                          <i class="fas fa-check-circle"></i>
+                          احترام حقوق الملكية الفكرية.
+                        </li>
+
+                        <li>
+                          <i class="fas fa-check-circle"></i>
+                          الالتزام بالسلوك الأخلاقي داخل المنصة.
+                        </li>
+
+                      </ul>
+
+                    </div>
+
+
+                <!-- Contact Us -->
+                    <div class="contact-card">
+
+                        <div class="section-heading">
+                            <h2 class="heading-title">تواصل معنا</h2>
+                        </div>
+
+                        <p class="contact-desc">
+                        لو عندك أي استفسار أو مشكلة، تواصل معنا في أي وقت 👇
+                        </p>
+
+                        <div class="contact-list">
+
+                            <a href="tel:+201000000000" class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>01000000000</span>
+                            </a>
+
+                            <a href="mailto:info@rage3online.com" class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@rage3online.com</span>
+                            </a>
+
+                            <a href="https://wa.me/201000000000" target="_blank" class="contact-item">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>واتساب</span>
+                            </a>
+
+                            <a href="#" class="contact-item">
+                                <i class="fab fa-facebook"></i>
+                                <span>Rage3 Online</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </section>
 
               <div class="footer-note">
                 - الطريق إلى اﻹمتحان مع راجع أونلاين -
@@ -212,7 +281,7 @@
             <span>الرئيسية</span>
           </a>
 
-          <a href="subjects.html" class="bottom-nav-link active">
+          <a href="../subjects/subjects.html" class="bottom-nav-link">
             <i class="fas fa-book-open nav-icon"></i>
             <span>المواد الدراسية</span>
           </a>
@@ -222,11 +291,11 @@
             <span>الجداول الدراسية</span>
           </a>
 
-          <a href="../about-us/about-us.html" class="bottom-nav-link">
+          <a href="#" class="bottom-nav-link active">
             <i class="fas fa-users nav-icon"></i>
             <span>من نحن</span>
           </a>
-
+          
         </div>
       </div>
 
@@ -254,7 +323,7 @@
       <script src="https://unpkg.com/@panzoom/panzoom/dist/panzoom.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
       <!-- Page Script -->
-      <script src="../../js/subjects/pdf.js" defer></script>
+      <script src="../../js/about-us/about-us.js" defer></script>
     </div>
 
   </body>

@@ -133,7 +133,7 @@ body {
   align-items: center;
 }
 
-.buttom-nav-link {
+.bottom-nav-link {
   text-align: center;
   text-decoration: none;
   color: rgba(255,255,255,0.6);
@@ -142,7 +142,7 @@ body {
   transition: 0.3s;
 }
 
-.buttom-nav-link.active {
+.bottom-nav-link.active {
   background: linear-gradient(135deg,#fff,#e6f4f7);
   color: var(--dark-teal);
   box-shadow: 0 4px 10px rgba(0,0,0,0.12);
@@ -154,7 +154,7 @@ body {
   font-size: 1.2rem;
 }
 
-.buttom-nav-link span {
+.bottom-nav-link span {
   font-size: 0.7rem;
 }
 
@@ -523,202 +523,184 @@ body.menu-active .side-menu {
   }
 }
 
-/* ===============================
-   CHAPTER CONTENT
-=============================== */
 
-.chapter-content {
-  padding: 0.6rem 0.8rem;
-}
 
 
 /* ===============================
-   SECTION BOX
+   ABOUT PAGE
 =============================== */
 
-.content-section {
-  margin-bottom: 1.6rem;
-
-  background: #fff;
-
-  border-radius: 22px;
-
-  padding: 14px 16px;
-
-  border: 1px solid #eee;
-
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-
-/* ===============================
-   SECTION TITLE
-=============================== */
-
-.section-title {
+.about-page {
   display: flex;
-  align-items: center;
-  gap: 8px;
-
-  margin-bottom: 14px;
-
-  font-size: 1.1rem;
-  font-weight: 800;
-
-  color: var(--main-teal);
+  flex-direction: column;
+  gap: 25px;
+  padding: 10px 5px;
 }
 
-.section-title i {
-  font-size: 1.25rem;
+/* Cards */
+
+.about-card,
+.contact-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--main-teal);
 }
 
 
 /* ===============================
-   ITEMS LIST
+   ABOUT SECTION
 =============================== */
 
-.items-list {
+.about-text {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.about-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.stat-box {
+  flex: 1;
+  background: linear-gradient(135deg, #f7fbfc, #eaf6f8);
+  border-radius: 15px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.stat-box h3 {
+  margin: 0;
+  color: var(--main-teal);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.stat-box span {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+
+/* ===============================
+   CONTACT SECTION
+=============================== */
+
+.contact-desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 15px;
+  text-align: right;
+}
+
+.contact-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin-bottom: 20px;
 }
 
-
-/* ===============================
-   LESSON ITEM
-=============================== */
-
-.lesson-item {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-
-  background: linear-gradient(#fff, #fafafa);
-
-  border-radius: 18px;
-
-  padding: 13px 15px;
-
-  border: 1px solid #e6e6e6;
-
-  box-shadow: 0 3px 10px rgba(0,0,0,0.07);
-
-  transition: all 0.25s ease;
-}
-
-
-/* Hover / Tap */
-
-.lesson-item:hover {
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-.lesson-item:active {
-  transform: scale(0.96);
-}
-
-
-/* ===============================
-   ROW LAYOUT
-=============================== */
-
-.lesson-row {
+.contact-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 12px;
+
+  background: #f6f9fa;
+  padding: 12px 15px;
+  border-radius: 14px;
+
+  text-decoration: none;
+  color: var(--main-color);
+  font-weight: 600;
+
+  transition: 0.25s;
+}
+
+.contact-item i {
+  font-size: 1.2rem;
+  color: var(--main-teal);
+  width: 25px;
+  text-align: center;
+}
+
+.contact-item:hover {
+  background: #eaf6f8;
+  transform: translateX(-3px);
 }
 
 
+/* Counter Animation */
+
+.stat-box h3 {
+  transition: 0.3s;
+}
+
+.stat-box:hover h3 {
+  transform: scale(1.15);
+  color: var(--dark-teal);
+}
+
 /* ===============================
-   INFO SIDE
+   POLICY SECTION
 =============================== */
 
-.lesson-info {
+.policy-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--main-teal);
+}
+
+
+/* Text */
+
+.policy-text {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+
+/* List */
+
+.policy-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.policy-list li {
   display: flex;
   align-items: center;
   gap: 10px;
 
-  min-width: 0;
-}
+  background: #f6f9fa;
+  padding: 10px 12px;
+  border-radius: 12px;
 
-
-/* ===============================
-   ICONS
-=============================== */
-
-.lesson-icon {
-  font-size: 1.2rem;
-  flex-shrink: 0;
-  opacity: 0.95;
-}
-
-
-/* Video Icon */
-
-.lesson-icon.video {
-  background: linear-gradient(135deg, #3ba3b5, #2d818f);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-
-/* PDF Icon */
-
-.lesson-icon.pdf {
-  background: linear-gradient(135deg, #e53935, #c62828);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-
-/* ===============================
-   TITLE
-=============================== */
-
-.lesson-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-
-  color: var(--main-color);
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-
-/* ===============================
-   ARROW
-=============================== */
-
-.lesson-arrow {
-  font-size: 1rem;
-  color: var(--main-teal);
-
-  transition: transform 0.25s ease,
-              opacity 0.25s ease;
-}
-
-
-/* Arrow Animation */
-
-.lesson-item:hover .lesson-arrow {
-  transform: translateX(-4px);
-  opacity: 0.85;
-}
-
-.lesson-item:active .lesson-arrow {
-  transform: translateX(-6px) scale(0.9);
-}
-
-
-/* ===============================
-   EMPTY STATE
-=============================== */
-
-.empty-msg {
-  text-align: center;
-  color: #999;
   font-size: 0.9rem;
-  padding: 12px 0;
+  color: var(--main-color);
+  font-weight: 500;
+}
+
+
+/* Icon */
+
+.policy-list li i {
+  color: var(--main-teal);
+  font-size: 1rem;
 }

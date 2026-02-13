@@ -15,7 +15,7 @@
     <!-- Template global css file. Requared all pages -->
     <link rel="stylesheet" href="../../css/global.style.css" />
     <!-- page Style -->
-    <link rel="stylesheet" href="../../css/pages/subjects/pdf.css" />
+    <link rel="stylesheet" href="../../css/pages/about-us/share.css" />
     <!-- Loading Tajwal Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -25,35 +25,6 @@
   </head>
 
   <body>
-
-  <!-- PDF Download Overlay -->
-    <div class="search-overlay" id="pdfDownloadOverlay">
-      <div class="search-container join-container">
-
-        <div class="section-heading mb-2">
-          <h2 class="heading-title" style="font-size:1.2rem">
-            تحميل الملف
-          </h2>
-        </div>
-
-        <button
-          class="close-search"
-          id="closePdfOverlay">
-          <i class="fas fa-times"></i>
-        </button>
-
-        <div class="pdf-download-view">
-          <iframe
-            id="pdf-download-frame"
-            src=""
-            width="100%"
-            height="100%"
-            style="border:none;">
-          </iframe>
-        </div>
-
-      </div>
-    </div>
 
     <div class="mobile-shell">
       <div class="search-overlay" id="searchOverlay">
@@ -156,7 +127,7 @@
               </div>
 
               <div class="menu-footer">
-                <a href="../about-us/share.html"><i class="fas fa-share"></i> شارك التطبيق</a>
+                <a href="#"><i class="fas fa-share"></i> شارك التطبيق</a>
                 <a href="../../pages/login-registering/login.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
               </div>
             </nav>
@@ -169,30 +140,74 @@
           <div class="content">
             <div class="container">
 
-              <section class="pdf-page">
+            <!-- Share App Section -->
+                <section class="share-page">
 
-                <div class="section-heading">
-                  <h2 id="pdf-title" class="heading-title"></h2>
+                    <div class="share-card">
 
-                  <button onclick="goBack()"
-                    class="btn section-action back-btn">
-                    رجوع
-                  </button>
-                </div>
+                    <!-- Icon -->
+                        <div class="share-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
 
-                <div class="pdf-toolbar">
-                    <a id="download-pdf"
-                      class="pdf-btn download-btn"
-                      download>
-                      <i class="fas fa-download"></i>
-                    </a>
-                </div>
+                    <!-- Title -->
+                        <h2 class="share-title">شارك التطبيق مع أصدقائك</h2>
 
-                <div class="pdf-wrapper">
-                  <canvas id="pdf-canvas"></canvas>
-                </div>
+                    <!-- Description -->
+                        <p class="share-desc">
+                            ساعد أصحابك في التفوق الدراسي من خلال مشاركة منصة
+                            <strong>راجع أونلاين</strong> معهم 🩵
+                        </p>
 
-              </section>
+                    <!-- App Link -->
+                        <div class="share-link-box">
+
+                            <input
+                                type="text"
+                                id="shareLink"
+                                value="https://rage3online.com"
+                                readonly
+                            >
+
+                            <button id="copyBtn">
+                                <i class="fas fa-copy"></i>
+                            </button>
+
+                        </div>
+
+
+                    <!-- Share Buttons -->
+                        <div class="share-buttons">
+
+                            <button class="share-btn whatsapp" data-type="whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                                واتساب
+                            </button>
+
+                            <button class="share-btn facebook" data-type="facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                فيسبوك
+                            </button>
+
+                            <button class="share-btn telegram" data-type="telegram">
+                                <i class="fab fa-telegram-plane"></i>
+                                تيليجرام
+                            </button>
+
+                            <button class="share-btn native" id="nativeShare">
+                                <i class="fas fa-share"></i>
+                                مشاركة
+                            </button>
+
+                        </div>
+
+
+                        <!-- Status -->
+                        <div id="shareStatus" class="share-status"></div>
+
+                    </div>
+
+                </section>
 
               <div class="footer-note">
                 - الطريق إلى اﻹمتحان مع راجع أونلاين -
@@ -212,7 +227,7 @@
             <span>الرئيسية</span>
           </a>
 
-          <a href="subjects.html" class="bottom-nav-link active">
+          <a href="../subjects/subjects.html" class="bottom-nav-link">
             <i class="fas fa-book-open nav-icon"></i>
             <span>المواد الدراسية</span>
           </a>
@@ -226,7 +241,7 @@
             <i class="fas fa-users nav-icon"></i>
             <span>من نحن</span>
           </a>
-
+          
         </div>
       </div>
 
@@ -254,7 +269,7 @@
       <script src="https://unpkg.com/@panzoom/panzoom/dist/panzoom.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
       <!-- Page Script -->
-      <script src="../../js/subjects/pdf.js" defer></script>
+      <script src="../../js/about-us/share.js" defer></script>
     </div>
 
   </body>

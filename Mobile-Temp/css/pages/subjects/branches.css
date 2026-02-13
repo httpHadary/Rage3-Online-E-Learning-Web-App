@@ -99,142 +99,6 @@ body {
 }
 
 /* ===============================
-   LIST WRAPPER
-=============================== */
-
-.schedule-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.heading-title {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: var(--main-teal);
-}
-
-/* ===============================
-   CARD
-=============================== */
-
-.schedule-card {
-  display: flex;
-  flex-direction: column;
-
-  background: linear-gradient(#fff, #fafafa);
-
-  border-radius: calc(var(--radius) * 2);
-
-  box-shadow: var(--shadow-sm);
-
-  text-decoration: none;
-
-  overflow: hidden;
-
-  transition: all 0.25s ease;
-
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.schedule-card:last-child {
-  border-bottom: none;
-}
-
-.schedule-card:hover {
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-.schedule-card:active {
-  transform: scale(0.97);
-}
-
-
-/* ===============================
-   IMAGE
-=============================== */
-
-.schedule-card .schedule-image {
-  width: 100%;
-  height: 115px;
-
-  overflow: hidden;
-}
-
-.schedule-card img{
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-}
-
-
-/* ===============================
-   CONTENT
-=============================== */
-
-.schedule-content {
-  height: 85px;
-
-  padding: 15px 0 0 0;
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-}
-
-
-/* Remove default margins */
-
-.schedule-title,
-.schedule-month {
-  margin: 0;
-}
-
-
-/* Title */
-
-.schedule-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-
-  color: var(--main-teal);
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  margin-bottom: 6px;
-}
-
-
-/* Month Badge */
-
-.schedule-month {
-  background: var(--bg-soft);
-
-  color: var(--main-teal);
-
-  font-size: 0.9rem;
-  font-weight: 700;
-
-  padding: 0.2rem 0.6rem;
-
-  border-radius: 8px;
-
-  display: inline-block;
-}
-
-/* ===============================
    FOOTER NOTE
 =============================== */
 
@@ -269,7 +133,7 @@ body {
   align-items: center;
 }
 
-.buttom-nav-link {
+.bottom-nav-link {
   text-align: center;
   text-decoration: none;
   color: rgba(255,255,255,0.6);
@@ -278,7 +142,7 @@ body {
   transition: 0.3s;
 }
 
-.buttom-nav-link.active {
+.bottom-nav-link.active {
   background: linear-gradient(135deg,#fff,#e6f4f7);
   color: var(--dark-teal);
   box-shadow: 0 4px 10px rgba(0,0,0,0.12);
@@ -290,7 +154,7 @@ body {
   font-size: 1.2rem;
 }
 
-.buttom-nav-link span {
+.bottom-nav-link span {
   font-size: 0.7rem;
 }
 
@@ -612,296 +476,219 @@ body.menu-active .side-menu {
 }
 
 
-
-/*
-=========================
-# Schedule Popup
-=========================
-*/
-
-.popup {
-    max-width: 520px;
-    width: 90%;
-    max-height: 85vh;
-
-    margin: auto;
-    background: #fff;
-
-    padding: 22px;
-
-    border-radius: 18px;
-    border: 3px solid var(--main-teal);
-
-    text-align: center;
-
-    overflow-y: auto;
-}
-
-/* Title */
-.popup h2 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-/* Hide inline popup initially */
-.mfp-hide {
-    display: none !important;
-}
-
-/*
-=========================
-# A4 Preview
-=========================
-*/
-
-.zoom-container {
-    width: 100%;
-    max-height: 70vh;
-
-    overflow: hidden;
-
-    border-radius: 12px;
-
-    background: #fafafa;
-
-    touch-action: none;
-    border: 3px solid var(--main-teal);
-}
-
-.popup-a4 {
-    width: 100%;
-    height: auto;
-
-    max-width: 100%;
-
-    aspect-ratio: 210 / 297;
-
-    object-fit: contain;
-
-    display: block;
-    margin: 0 auto;
-}
-
-/*
-=========================
-# Layer Fix
-=========================
-*/
-
-.mfp-wrap,
-.mfp-bg,
-.mfp-container,
-.mfp-content {
-    z-index: 9999999 !important;
-}
-
-/*
-=========================
-# Animation
-=========================
-*/
-
-.mfp-zoom-in .mfp-with-anim {
-    opacity: 0;
-    transform: scale(0.85);
-    transition: all 0.3s ease;
-}
-
-.mfp-zoom-in.mfp-ready .mfp-with-anim {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.mfp-zoom-in.mfp-removing .mfp-with-anim {
-    opacity: 0;
-    transform: scale(0.85);
-}
-
-/*
-=========================
-# Mobile
-=========================
-*/
-
-@media (max-width: 576px) {
-
-    .popup {
-        max-width: 95%;
-        padding: 18px;
-        border-radius: 14px;
-    }
-
-    .popup h2 {
-        font-size: 20px;
-    }
-
-    .zoom-container {
-        max-height: 65vh;
-    }
-
-}
-
-/*
-=========================
-# PDF VIEWER
-=========================
-*/
-
-/* Popup Container */
-
-.pdf-popup {
-    background: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    max-width: 900px;
-}
-
-/* =========================
-   HEADER
-========================= */
-
-.pdf-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 12px 18px;
-    background: var(--main-teal);
-    color: #fff;
-}
-
-.pdf-header h2 {
-    margin: 0;
-    font-size: 18px;
-}
-
-/* Controls */
-
-.pdf-controls {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.pdf-controls button {
-    background: var(--dark-teal);
-    border: none;
-    color: white;
-
-    width: 32px;
-    height: 32px;
-
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-
-/* =========================
-   VIEWPORT
-========================= */
-
-.pdf-viewport {
-    width: 100%;
-    height: 70vh;
-
-    background: #f1f5f9;
-
-    overflow: auto;
-    position: relative;
-
-    display: block;
-
-    cursor: grab;
-}
-
-/* Dragging */
-
-.pdf-viewport.dragging {
-    cursor: grabbing !important;
-}
-
-
-/* =========================
-   CANVAS
-========================= */
-
-#pdf-canvas {
-    display: block;
-    margin: 0;
-
-    background: white;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-
-    user-select: none;
-    touch-action: none;
-    -webkit-user-drag: none;
-
-    cursor: grab;
-}
-
-
-/* =========================
-   FULLSCREEN MODE
-========================= */
-
-.pdf-viewport.is-fullscreen {
-    position: fixed !important;
-    inset: 0;
-
-    width: 100vw !important;
-    height: 100vh !important;
-
-    z-index: 9999;
-    background: #020617;
-
-    display: block !important;
-}
-
-/* Center Wrapper */
-.pdf-center {
-    min-width: 100%;
-    min-height: 100%;
-    display: grid;
-    place-items: center;
-}
-
-
-/* =========================
-   MAGNIFIC FIX
-========================= */
-
-.mfp-content {
-    pointer-events: auto !important;
-}
-
-.mfp-close {
-    display: none !important;
-}
-
-
-
 /* ===============================
-   PAGE TRANSITIONS
+   SUBJECT / BRANCH / CHAPTER LIST
 =============================== */
 
-/* Initial state (before showing) */
-.app {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.35s ease;
+.section-subjects {
+  padding: 0.5rem 0.7rem;
 }
 
-/* When page is visible */
-.app.page-enter {
-  opacity: 1;
-  transform: translateY(0);
+.section-heading {
+  margin-bottom: 1rem;
+  padding: 0 5px;
 }
 
-/* When leaving page */
+.section-heading .heading-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--main-teal);
+  margin: 0;
+}
+
+
+/* Wrapper */
+
+.subjects-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+
+/* Card */
+
+.subject-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: linear-gradient(#fff, #fafafa);
+  border-radius: calc(var(--radius) * 2);
+
+  padding: 10px 12px;
+  margin-bottom: 1rem;
+
+  border: 1px solid var(--dark-teal);
+
+  box-shadow: var(--shadow-sm);
+
+  text-decoration: none;
+  color: inherit;
+
+  transition: all 0.25s ease;
+}
+
+
+/* Hover / Tap */
+
+.subject-item:hover {
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.subject-item:active {
+  transform: scale(0.97);
+}
+
+
+/* Image (If Exists) */
+
+.subject-item .image {
+  width: 90px;
+  height: 70px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.subject-item .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* Content */
+
+.subject-item-content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: right;
+  gap: 3px;
+}
+
+
+/* Title */
+
+.subject-item-content .title {
+  margin: 0;
+
+  font-size: 1.05rem;
+  font-weight: 700;
+
+  color: var(--main-color);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* Subtitle / Count */
+
+.subject-item-content .courses {
+  display: inline-block;
+
+  background: var(--bg-soft);
+  color: var(--main-teal);
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  padding: 2px 8px;
+  border-radius: 10px;
+
+  width: fit-content;
+}
+
+
+/* Remove Last Border */
+
+.subject-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Item Hovering */
+
+.subject-item:hover {
+  background: linear-gradient(#f9feff, #ffffff);
+}
+
+/* ===============================
+   CARD ARROW
+=============================== */
+
+.subject-arrow {
+  font-size: 1.1rem;
+  color: var(--main-teal);
+
+  flex-shrink: 0;
+
+  transition: transform 0.25s ease,
+              opacity 0.25s ease;
+}
+
+
+/* Animate on hover */
+
+.subject-item:hover .subject-arrow {
+  transform: translateX(-4px);
+  opacity: 0.8;
+}
+
+
+/* On tap */
+
+.subject-item:active .subject-arrow {
+  transform: translateX(-6px) scale(0.9);
+}
+
+/* ===============================
+   Back Button
+=============================== */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 14px;
+  border-radius: 20px;
+
+  border: 2px solid var(--main-teal);
+  color: var(--main-teal);
+
+  background: transparent;
+  font-weight: 700;
+  font-size: 0.9rem;
+
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.back-btn:hover {
+  background: var(--main-teal);
+  color: #fff;
+}
+
+.back-btn:active {
+  transform: scale(0.95);
+}
+
+/* ===============================
+   PAGE EXIT
+=============================== */
+
 .app.page-exit {
-  opacity: 0;
-  transform: translateY(-20px);
+  animation: pageExit 0.35s ease forwards;
+}
+
+@keyframes pageExit {
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }

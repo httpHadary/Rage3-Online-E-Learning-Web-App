@@ -38,7 +38,7 @@
 //         $(".login-card").addClass("card-exit");
         
 //         setTimeout(function () {
-//           window.location.href = "../home%20page/home.html";
+//           window.location.href = "../home-page/home.html";
 //         }, 500);
 
 //       } else {
@@ -89,7 +89,7 @@ $(function () {
     $(".login-card").addClass("card-exit");
 
     setTimeout(() => {
-      window.location.href = "../home%20page/home.html";
+      window.location.href = "../home-page/home.html";
     }, 500);
   }
 
