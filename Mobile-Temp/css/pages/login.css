@@ -60,10 +60,6 @@ html, body {
   margin-top: 10px;
 }
 
-.input-group {
-  position: relative;
-}
-
 .form-input {
   width: 100%;
   padding: 12px 15px;
@@ -72,16 +68,6 @@ html, body {
   font-size: 0.9rem;
   text-align: right;
   background-color: var(--bg-white);
-}
-
-.eye-btn {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: #bbb;
 }
 
 .forgot-link {
@@ -204,9 +190,4 @@ html, body {
   50% { transform: translateX(-5px); }
   75% { transform: translateX(5px); }
   100% { transform: translateX(0); }
-}
-
-.card-exit {
-  transform: translateY(100%);
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }

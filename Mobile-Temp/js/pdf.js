@@ -1,5 +1,3 @@
-let lastScrollY = 0;
-
 $(function () {
   "use strict";
 
@@ -25,7 +23,6 @@ $(function () {
   }
 
 
-
   /* ===============================
      URL PARAMS
   =============================== */
@@ -33,133 +30,6 @@ $(function () {
   function getQueryParam(name) {
     return new URLSearchParams(window.location.search).get(name);
   }
-
-
-
-  /* ===============================
-     SIDEBAR MENU
-  =============================== */
-
-  $('.menu-trigger').on('click', function (e) {
-
-    e.preventDefault();
-
-    lastScrollY = window.scrollY || window.pageYOffset;
-
-    window.scrollTo(0, 0);
-
-    $('body').addClass('menu-active');
-
-    $('.navbar, .bottom-navigation').css('opacity', '0');
-  });
-
-
-  $('.menu-overlay').on('click', function () {
-
-    $('body').removeClass('menu-active');
-
-    $('.navbar, .bottom-navigation').css('opacity', '1');
-
-    window.scrollTo(0, lastScrollY);
-  });
-
-
-
-  /* ===============================
-     SEARCH OVERLAY
-  =============================== */
-
-  const searchOverlay = $('#searchOverlay');
-  const searchInput   = $('#searchInput');
-
-
-  $(document).on('click', '.fa-search', function (e) {
-
-    e.preventDefault();
-
-    searchOverlay.addClass('active');
-
-    setTimeout(() => {
-      searchInput.focus();
-    }, 300);
-  });
-
-
-  $('#closeSearch').on('click', function () {
-    searchOverlay.removeClass('active');
-  });
-
-
-  searchOverlay.on('click', function (e) {
-
-    if ($(e.target).hasClass('search-overlay')) {
-      searchOverlay.removeClass('active');
-    }
-  });
-
-
-
-  /* ===============================
-     JOIN OVERLAY
-  =============================== */
-
-  const joinOverlay  = $('#joinOverlay');
-  const courseInput = $('#courseCodeInput');
-
-
-  $(document).on('click', '.fa-plus', function (e) {
-
-    e.preventDefault();
-
-    joinOverlay.addClass('active');
-
-    setTimeout(() => {
-      courseInput.focus();
-    }, 300);
-  });
-
-
-  $('#closeJoin').on('click', function () {
-    joinOverlay.removeClass('active');
-  });
-
-
-  joinOverlay.on('click', function (e) {
-
-    if ($(e.target).hasClass('search-overlay')) {
-      joinOverlay.removeClass('active');
-    }
-  });
-
-
-
-  /* ===============================
-     DEV OVERLAY
-  =============================== */
-
-  const devOverlay      = document.getElementById("devOverlay");
-  const closeDevOverlay = document.getElementById("closeDevOverlay");
-
-
-  document.querySelectorAll(".dev-link").forEach(link => {
-
-    link.addEventListener("click", function (e) {
-
-      e.preventDefault();
-
-      devOverlay.classList.add("active");
-    });
-  });
-
-
-  if (closeDevOverlay) {
-
-    closeDevOverlay.addEventListener("click", function () {
-
-      devOverlay.classList.remove("active");
-    });
-  }
-
 
 
   /* ===============================
@@ -170,16 +40,21 @@ $(function () {
 
     const subject = getQueryParam("subject");
     const branch  = getQueryParam("branch");
-    const chapter = getQueryParam("chapter");
 
-    if (!subject || !chapter) {
+    if (!subject) {
+
       animateAndGo("subjects.html");
       return;
     }
 
-    let url = `content.html?subject=${subject}&chapter=${chapter}`;
 
-    if (branch) url += `&branch=${branch}`;
+    /* Back to content */
+
+    let url = `content.html?subject=${subject}`;
+
+    if (branch) {
+      url += `&branch=${branch}`;
+    }
 
     animateAndGo(url);
   };
@@ -196,18 +71,14 @@ $(function () {
 
       nahw: {
 
-        ch1: {
+        f1: {
+          title: "ملف القواعد PDF",
+          url: "../../PDFs/pdfDemo.pdf"
+        },
 
-          f1: {
-            title: "ملف القواعد PDF",
-            url: "../../PDFs/pdfDemo.pdf"
-          },
-
-          f2: {
-            title: "واجب تدريبي",
-            url: "../../PDFs/pdfDemo.pdf"
-          }
-
+        f2: {
+          title: "واجب تدريبي",
+          url: "../../PDFs/pdfDemo.pdf"
         }
 
       }
@@ -217,13 +88,9 @@ $(function () {
 
     geography: {
 
-      ch1: {
-
-        f1: {
-          title: "ملف المناخ",
-          url: "../../PDFs/pdfDemo.pdf"
-        }
-
+      f1: {
+        title: "ملف المناخ",
+        url: "../../PDFs/pdfDemo.pdf"
       }
 
     }
@@ -280,10 +147,10 @@ $(function () {
 
     const subject = getQueryParam("subject");
     const branch  = getQueryParam("branch");
-    const chapter = getQueryParam("chapter");
     const fileId  = getQueryParam("file");
 
-    if (!subject || !chapter || !fileId) {
+
+    if (!subject || !fileId) {
 
       $("#pdf-title").text("الملف غير متوفر");
       return;
@@ -292,17 +159,25 @@ $(function () {
 
     let file = null;
 
+
+    /* With branch */
+
     if (branch) {
-      file = PDFS?.[subject]?.[branch]?.[chapter]?.[fileId];
-    } else {
-      file = PDFS?.[subject]?.[chapter]?.[fileId];
+
+      file = PDFS?.[subject]?.[branch]?.[fileId];
+    }
+
+    /* No branch */
+
+    else {
+
+      file = PDFS?.[subject]?.[fileId];
     }
 
 
     if (!file) {
 
       $("#pdf-title").text("الملف غير متوفر");
-
       return;
     }
 
@@ -362,7 +237,6 @@ $(function () {
 
     if (!pdfUrl) return;
 
-    // Load PDF inside overlay
     pdfFrame.attr("src", pdfUrl);
 
     pdfOverlay.addClass("active");

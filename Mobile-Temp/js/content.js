@@ -1,7 +1,6 @@
-let lastScrollY = 0;
-
 $(function () {
   "use strict";
+
 
   /* ===============================
      PAGE TRANSITION
@@ -30,284 +29,118 @@ $(function () {
 
   function getQueryParam(name) {
 
-    const urlParams = new URLSearchParams(window.location.search);
-
-    return urlParams.get(name);
+    return new URLSearchParams(window.location.search).get(name);
   }
 
 
-
-    /* ===============================
-        BACK NAVIGATION (LESSONS → CHAPTERS)
-    =============================== */
-
-    window.goBack = function () {
-
-        const subject = getQueryParam("subject");
-        const branch  = getQueryParam("branch");
-        const chapter = getQueryParam("chapter");
-
-        if (!subject || !chapter) {
-
-            animateAndGo("subjects.html");
-            return;
-        }
-
-        let url = `chapters.html?subject=${subject}`;
-
-        if (branch) {
-            url += `&branch=${branch}`;
-        }
-
-        animateAndGo(url);
-    };
-
-
   /* ===============================
-     INTERCEPT INTERNAL LINKS
+     TEMP DATA (API LATER)
   =============================== */
 
-  $(document).on("click", "a[href]", function (e) {
-
-    const url = $(this).attr("href");
-
-    if (
-      !url ||
-      url.startsWith("#") ||
-      url.startsWith("javascript") ||
-      url.startsWith("http")
-    ) {
-      return;
-    }
-
-    e.preventDefault();
-
-    animateAndGo(url);
-  });
-
-
-
-  /* ===============================
-     SIDEBAR MENU
-  =============================== */
-
-  $('.menu-trigger').on('click', function (e) {
-
-    e.preventDefault();
-
-    lastScrollY = window.scrollY || window.pageYOffset;
-
-    window.scrollTo(0, 0);
-
-    $('body').addClass('menu-active');
-
-    $('.navbar, .bottom-navigation').css('opacity', '0');
-  });
-
-
-  $('.menu-overlay').on('click', function () {
-
-    $('body').removeClass('menu-active');
-
-    $('.navbar, .bottom-navigation').css('opacity', '1');
-
-    window.scrollTo(0, lastScrollY);
-  });
-
-
-
-  /* ===============================
-     SEARCH OVERLAY
-  =============================== */
-
-  const searchOverlay = $('#searchOverlay');
-  const searchInput   = $('#searchInput');
-
-
-  $(document).on('click', '.fa-search', function (e) {
-
-    e.preventDefault();
-
-    searchOverlay.addClass('active');
-
-    setTimeout(() => {
-      searchInput.focus();
-    }, 300);
-  });
-
-
-  $('#closeSearch').on('click', function () {
-    searchOverlay.removeClass('active');
-  });
-
-
-  searchOverlay.on('click', function (e) {
-
-    if ($(e.target).hasClass('search-overlay')) {
-      searchOverlay.removeClass('active');
-    }
-  });
-
-
-
-  /* ===============================
-     JOIN OVERLAY
-  =============================== */
-
-  const joinOverlay  = $('#joinOverlay');
-  const courseInput = $('#courseCodeInput');
-
-
-  $(document).on('click', '.fa-plus', function (e) {
-
-    e.preventDefault();
-
-    joinOverlay.addClass('active');
-
-    setTimeout(() => {
-      courseInput.focus();
-    }, 300);
-  });
-
-
-  $('#closeJoin').on('click', function () {
-    joinOverlay.removeClass('active');
-  });
-
-
-  joinOverlay.on('click', function (e) {
-
-    if ($(e.target).hasClass('search-overlay')) {
-      joinOverlay.removeClass('active');
-    }
-  });
-
-
-  $('#submitCodeBtn').on('click', function () {
-
-    const code = courseInput.val().trim();
-
-    if (!code) return;
-
-    console.log("Submitting code:", code);
-
-    $(this)
-      .prop('disabled', true)
-      .text('جاري التحقق...');
-  });
-
-
-
-  /* ===============================
-     DEV OVERLAY
-  =============================== */
-
-  const devOverlay      = document.getElementById("devOverlay");
-  const closeDevOverlay = document.getElementById("closeDevOverlay");
-
-
-  document.querySelectorAll(".dev-link").forEach(link => {
-
-    link.addEventListener("click", function (e) {
-
-      e.preventDefault();
-
-      devOverlay.classList.add("active");
-    });
-  });
-
-
-  if (closeDevOverlay) {
-
-    closeDevOverlay.addEventListener("click", function () {
-
-      devOverlay.classList.remove("active");
-    });
-  }
-
-
-
-    /* ===============================
-        LESSON CONTENT (TEMP DATA)
-    =============================== */
-
-    const LESSONS = {
+  const LESSONS = {
 
     arabic: {
 
-        nahw: {
-
-        ch1: {
-
-            videos: [
-            { id: "v1", 
-              title: "شرح الباب الأول - الجزء الأول",
-              youtubeId: "tP49cWxRMPk"
-            },
-            { id: "v2", 
-              title: "تدريبات نحوية",
-              youtubeId: "tP49cWxRMPk"
-            }
-            ],
-
-            files: [
-            { id: "f1", title: "ملف القواعد PDF" },
-            { id: "f2", title: "واجب تدريبي" }
-            ]
-
-        }
-
-        }
-
-    },
-
-
-    geography: {
-
-        ch1: {
+      nahw: {
 
         videos: [
-            { id: "v1", title: "شرح الخرائط" }
+          {
+            id: "v1",
+            title: "شرح الباب الأول - الجزء الأول",
+            youtubeId: "tP49cWxRMPk"
+          },
+          {
+            id: "v2",
+            title: "تدريبات نحوية",
+            youtubeId: "tP49cWxRMPk"
+          }
         ],
 
         files: [
-            { id: "f1", title: "ملف المناخ" }
+          { id: "f1", title: "ملف القواعد PDF" },
+          { id: "f2", title: "واجب تدريبي" }
         ]
 
-        }
+      }
+
+    },
+
+    geography: {
+
+      videos: [
+        { id: "v1", title: "شرح الخرائط" }
+      ],
+
+      files: [
+        { id: "f1", title: "ملف المناخ" }
+      ]
 
     }
 
-    };
+  };
 
 
-    /* ===============================
-        LOAD LESSON CONTENT
-    =============================== */
+  /* ===============================
+     BACK BUTTON
+  =============================== */
 
-    function loadLessonContent() {
+  window.goBack = function () {
 
     const subject = getQueryParam("subject");
     const branch  = getQueryParam("branch");
-    const chapter = getQueryParam("chapter");
 
-    if (!subject || !chapter) return;
+
+    /* Came from branches */
+
+    if (subject && branch) {
+
+      animateAndGo(`branches.html?subject=${subject}`);
+      return;
+    }
+
+
+    /* Came from subjects */
+
+    if (subject) {
+
+      animateAndGo("subjects.html");
+      return;
+    }
+
+
+    /* Fallback */
+
+    animateAndGo("subjects.html");
+  };
+
+
+  /* ===============================
+     LOAD CONTENT
+  =============================== */
+
+  function loadLessonContent() {
+
+    const subject = getQueryParam("subject");
+    const branch  = getQueryParam("branch");
+
+    if (!subject) return;
 
 
     let data = null;
 
-    /* Has Branch */
+
+    /* With branch */
+
     if (branch) {
 
-        data = LESSONS?.[subject]?.[branch]?.[chapter];
-
+      data = LESSONS?.[subject]?.[branch];
     }
 
-    /* No Branch */
+    /* No branch */
+
     else {
 
-        data = LESSONS?.[subject]?.[chapter];
-
+      data = LESSONS?.[subject];
     }
 
 
@@ -319,103 +152,89 @@ $(function () {
 
 
     /* ===============================
-        NO DATA
+       NO DATA
     =============================== */
 
     if (!data) {
 
-        videosBox.html(`
-        <p style="text-align:center;color:#888">
-            لا توجد فيديوهات
-        </p>
-        `);
+      videosBox.html(`<p class="empty-msg">لا توجد فيديوهات</p>`);
+      filesBox.html(`<p class="empty-msg">لا توجد ملفات</p>`);
 
-        filesBox.html(`
-        <p style="text-align:center;color:#888">
-            لا توجد ملفات
-        </p>
-        `);
-
-        return;
+      return;
     }
 
 
     /* ===============================
-        VIDEOS
+       VIDEOS
     =============================== */
 
-    if (!data.videos || !data.videos.length) {
+    if (data.videos && data.videos.length) {
 
-        videosBox.html(`
-        <p style="text-align:center;color:#888">
-            لا توجد فيديوهات
-        </p>
+      data.videos.forEach(video => {
+
+      const ytId = video.youtubeId || "";
+
+      if (!ytId) {
+        videosBox.append(`
+          <p class="empty-msg">لا توجد فيديوهات حالياً</p>
         `);
+        return;
+      }
 
-    } else {
+        const url =
+          `video.html?subject=${subject}` +
+          (branch ? `&branch=${branch}` : "") +
+          `&yt=${video.youtubeId}` +
+          `&title=${encodeURIComponent(video.title)}`;
 
-        data.videos.forEach(video => {
 
-          if (!video.youtubeId) return;
+        const card = `
+          <a href="${url}"
+             class="lesson-item video-link"
+             data-url="${url}">
 
-          const url =
-            `video.html?subject=${subject}` +
-            (branch ? `&branch=${branch}` : "") +
-            `&chapter=${chapter}` +
-            `&yt=${video.youtubeId}` +
-            `&title=${encodeURIComponent(video.title)}`;
+            <div class="lesson-row">
 
-          const card = `
-            <a href="${url}"
-              class="lesson-item video-link"
-              data-url="${url}">
-
-              <div class="lesson-row">
-
-                <div class="lesson-info">
-                  <span class="lesson-title">${video.title}</span>
-                </div>
-
-                <i class="fas fa-chevron-left lesson-arrow"></i>
-
+              <div class="lesson-info">
+                <span class="lesson-title">${video.title}</span>
               </div>
 
-            </a>
-          `;
+              <i class="fas fa-chevron-left lesson-arrow"></i>
 
-          videosBox.append(card);
+            </div>
 
-        });
+          </a>
+        `;
 
+        videosBox.append(card);
+
+      });
+
+    } else {
+
+      videosBox.html(`<p class="empty-msg">لا توجد فيديوهات</p>`);
 
     }
 
+
     /* ===============================
-      FILES
+       FILES
     =============================== */
 
-    if (!data.files || !data.files.length) {
-
-      filesBox.html(`
-        <p style="text-align:center;color:#888">
-            لا توجد ملفات
-        </p>
-      `);
-
-    } else {
+    if (data.files && data.files.length) {
 
       data.files.forEach(file => {
 
         const url =
           `pdf.html?subject=${subject}` +
           (branch ? `&branch=${branch}` : "") +
-          `&chapter=${chapter}` +
           `&file=${file.id}`;
+
 
         const card = `
           <a href="${url}"
-            class="lesson-item file-link"
-            data-url="${url}">
+             class="lesson-item file-link"
+             data-url="${url}">
 
             <div class="lesson-row">
 
@@ -434,38 +253,17 @@ $(function () {
 
       });
 
-    }
+    } else {
+
+      filesBox.html(`<p class="empty-msg">لا توجد ملفات</p>`);
 
     }
 
-
-  /* ===============================
-        CHAPTER CLICK
-  =============================== */
-
-  $(document).on("click", ".chapter-link", function (e) {
-
-    e.preventDefault();
-
-    const url = $(this).data("url");
-
-    animateAndGo(url);
-  });
+  }
 
 
   /* ===============================
-     INIT
-  =============================== */
-
-  $(document).ready(function () {
-
-    $("#page-title").text("المحتوى");
-    loadLessonContent();
-
-  });
-
-  /* ===============================
-    VIDEO CLICK
+     VIDEO CLICK
   =============================== */
 
   $(document).on("click", ".video-link", function (e) {
@@ -474,12 +272,15 @@ $(function () {
 
     const url = $(this).data("url");
 
-    animateAndGo(url);
+    if (url) {
+      animateAndGo(url);
+    }
 
   });
 
+
   /* ===============================
-    PDF CLICK
+     FILE CLICK
   =============================== */
 
   $(document).on("click", ".file-link", function (e) {
@@ -488,9 +289,19 @@ $(function () {
 
     const url = $(this).data("url");
 
-    animateAndGo(url);
+    if (url) {
+      animateAndGo(url);
+    }
 
   });
 
+
+  /* ===============================
+     INIT
+  =============================== */
+
+  $("#page-title").text("المحتوى");
+
+  loadLessonContent();
 
 });

@@ -69,7 +69,25 @@ html, body {
 
 .input-group {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
 }
+
+.eye-btn {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #929292;
+  cursor: pointer;
+  z-index: 5;
+  padding: 0;
+}
+
 
 .form-input {
   width: 100%;
@@ -120,32 +138,8 @@ html, body {
   text-decoration: underline;
 }
 
-.input-group {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.eye-btn {
-  position: absolute;
-  left: 15px; 
-  background: none;
-  border: none;
-  color: #929292;
-  cursor: pointer;
-  z-index: 5;
-  padding: 0;
-}
-
 .input-group .form-input {
   padding-left: 45px;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
 }
 
 .field-error {

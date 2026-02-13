@@ -48,7 +48,6 @@
 * {
   box-sizing: border-box;
   outline: none;
-  user-select: none;
 }
 .smooth {
   -webkit-transition: 0.25s ease-in-out;
@@ -147,12 +146,13 @@ body.mobile-shell .app {
 [ Wrapper ]
 *------------------------------------------------------------------*/
 .app {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .content {
   flex-grow: 1;
 }
@@ -730,10 +730,10 @@ textarea {
 .custom-video-wrapper .buttom-controls .full-screen.show-in-full i:first-child {
   display: none !important;
 }
+
 /*-------------------------------------------------------------------
 [ Animations ]
 *------------------------------------------------------------------*/
-/* Fade In Out */
 @-webkit-keyframes fade_in_out {
   from {
     opacity: 1;
@@ -763,7 +763,6 @@ textarea {
 [ Page Transitions & Entrance Animations ]
 *------------------------------------------------------------------*/
 
-/* 1. Definitions */
 @keyframes slideUpCard {
   from {
     transform: translateY(100%);
@@ -775,10 +774,7 @@ textarea {
   }
 }
 
-/* Update your exit animation in global.style.css */
-
 .card-exit {
-  /* ease-in makes it start slow and "fall" off the screen fast */
   animation: slideDownCard 0.6s cubic-bezier(0.5, 0, 1, 1) forwards !important;
   pointer-events: none; /* Prevent double clicks during transition */
   will-change: transform, opacity; 
@@ -806,19 +802,14 @@ textarea {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* 2. Application to Elements */
-
-/* The Cyan Card slides up on page load */
 .login-card {
   animation: slideUpCard 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-/* The Logo pops in */
 .brand-logo {
   animation: popLogo 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-/* Form items fade in one by one (Staggered) */
 .form .input-group, 
 .form .btn-login, 
 .form .btn-submit,
@@ -828,7 +819,6 @@ textarea {
   animation: fadeInStagger 1s ease-out forwards;
 }
 
-/* Delay timing for the "wave" effect */
 .form .input-group:nth-child(1) { animation-delay: 0.3s; }
 .form .input-group:nth-child(2) { animation-delay: 0.4s; }
 .form .input-group:nth-child(3) { animation-delay: 0.5s; }
@@ -840,4 +830,40 @@ body {
 }
 html, * {
   font-family: "Tajawal", sans-serif;
+}
+
+
+/* ===============================
+   Page Entrance Animations
+=============================== */
+
+/* Sections animation */
+.section-animate {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.section-animate.animate-in {
+  animation: sectionEnter 0.7s ease forwards;
+}
+
+@keyframes pageEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sectionEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

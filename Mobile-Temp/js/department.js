@@ -60,7 +60,7 @@ $(function() {
         $(this).text("تم الحفظ...").css("opacity", "0.7");
         
         setTimeout(() => {
-            window.location.href = "home.html";
+            window.location.href = "../home%20page/home.html";
         }, 800);
     });
 });

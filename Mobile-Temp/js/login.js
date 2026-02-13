@@ -50,15 +50,18 @@
 // });
 
 
-// Form Without Validation
 $(function () {
   "use strict";
 
   const loginForm = $("#loginForm");
   const loginError = $("#login-error");
 
+  /* ===============================
+     Toggle Password Visibility
+  =============================== */
   $(document).on("click", ".eye-btn", function (e) {
     e.preventDefault();
+
     const input = $(this).siblings(".form-input");
     const icon = $(this).find("i");
 
@@ -71,12 +74,28 @@ $(function () {
     }
   });
 
-  // Clear errors when user types
-  $(".form-input").on("input", function() {
+  /* ===============================
+     Clear Errors on Input
+  =============================== */
+  $(".form-input").on("input", function () {
     $(this).removeClass("input-error");
     loginError.fadeOut(200);
   });
 
+  /* ===============================
+     Redirect with Animation
+  =============================== */
+  function goHome() {
+    $(".login-card").addClass("card-exit");
+
+    setTimeout(() => {
+      window.location.href = "../home%20page/home.html";
+    }, 500);
+  }
+
+  /* ===============================
+     Form Submit (Mock Login)
+  =============================== */
   loginForm.on("submit", function (e) {
     e.preventDefault();
 
@@ -84,37 +103,19 @@ $(function () {
     const password = $('input[name="password"]').val().trim();
 
     if (true) {
-      
-      $(".login-card").addClass("card-exit");
-      
-      setTimeout(function () {
-        window.location.href = "../home%20page/home.html";
-      }, 500);
-
+      goHome();
     } else {
       loginError.fadeIn(300);
       $(".form-input").addClass("input-error");
     }
   });
 
-  $(document).on("click", ".btn-google", function (e) {
+  /* ===============================
+     Social Login (Temp)
+  =============================== */
+  $(".btn-google, .btn-facebook").on("click", function (e) {
     e.preventDefault();
-
-    $(".login-card").addClass("card-exit");
-    
-    setTimeout(function () {
-      window.location.href = "../home%20page/home.html";
-    }, 500);
-  });
-
-  $(document).on("click", ".btn-facebook", function (e) {
-    e.preventDefault();
-
-    $(".login-card").addClass("card-exit");
-    
-    setTimeout(function () {
-      window.location.href = "../home%20page/home.html";
-    }, 500);
+    goHome();
   });
 
 });

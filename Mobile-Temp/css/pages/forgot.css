@@ -130,29 +130,23 @@ html, body {
   transform: scale(0.98);
 }
 
-/* Synchronized Entrance for Forgot Page */
 .login-card {
-  /* Increased duration from 0.7s to 0.85s to match the "feel" of heavier pages */
   animation: slideUpForgot 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .brand-logo {
-  /* Matches exactly with Login/Register */
   animation: popLogo 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-/* Staggered entrance for the header and inputs */
 .form-header, .input-group, .btn-submit {
   opacity: 0;
   animation: fadeInStagger 0.6s ease-out forwards;
 }
 
-/* Timing offsets to slow down the "pop-in" effect */
 .form-header { animation-delay: 0.4s; }
 .input-group { animation-delay: 0.55s; }
 .btn-submit  { animation-delay: 0.7s; }
 
-/* 2. Keyframe Definitions (Force sync) */
 @keyframes slideUpForgot {
   from {
     transform: translateY(100%);
