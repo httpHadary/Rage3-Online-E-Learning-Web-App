@@ -15,7 +15,7 @@
     <!-- Template global css file. Requared all pages -->
     <link rel="stylesheet" href="../../css/global.style.css" />
     <!-- page Style -->
-    <link rel="stylesheet" href="../../css/pages/about-us/share.css" />
+    <link rel="stylesheet" href="../../css/pages/user-profile/user-profile.css" />
     <!-- Loading Tajwal Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -107,7 +107,7 @@
 
         <aside class="side-menu">
 
-          <a href="../user-profile/user-profile.html">
+          <a href="user-profile.html">
             <div class="side-menu-header">
               <img src="../../img/Hadary/avatar.png" alt="User Avatar" class="user-avatar">
 
@@ -120,10 +120,10 @@
 
             <nav class="side-menu-links">
               <div class="menu-main">
-                <a href="../user-profile/user-profile.html"><i class="fas fa-user-circle"></i> الملف الشخصي</a>
+                <a href="user-profile.html"><i class="fas fa-user-circle"></i> الملف الشخصي</a>
                 <a href="../subscriptions/subscriptions.html"><i class="fas fa-wallet"></i> الاشتراكات</a>
                 <a href="#" class="add-code-link"><i class="fas fa-plus"></i>إضافة كود</a>
-                <a href="../user-profile/change-password.html"><i class="fas fa-key"></i> تغيير كلمة السر</a>
+                <a href="change-password.html"><i class="fas fa-key"></i> تغيير كلمة السر</a>
               </div>
 
               <div class="menu-footer">
@@ -140,74 +140,105 @@
           <div class="content">
             <div class="container">
 
-            <!-- Share App Section -->
-                <section class="share-page">
+                <section class="profile-page">
 
-                    <div class="share-card">
+                    <!-- USER INFO -->
+                    <div class="profile-card">
 
-                    <!-- Icon -->
-                        <div class="share-icon">
-                            <i class="fas fa-share-alt"></i>
+                        <div class="profile-header">
+                        <img src="../../img/Hadary/avatar.png" alt="User" class="profile-avatar">
+                        
+                        <div class="profile-info">
+                            <h3>Ahmed Elhadary</h3>
+                            <p>الصف الثالث الثانوي</p>
                         </div>
-
-                    <!-- Title -->
-                        <h2 class="share-title">شارك التطبيق مع أصدقائك</h2>
-
-                    <!-- Description -->
-                        <p class="share-desc">
-                            ساعد أصحابك في التفوق الدراسي من خلال مشاركة منصة
-                            <strong>راجع أونلاين</strong> معهم 🩵
-                        </p>
-
-                    <!-- App Link -->
-                        <div class="share-link-box">
-
-                            <input
-                                type="text"
-                                id="shareLink"
-                                value="https://rage3online.com"
-                                readonly
-                            >
-
-                            <button id="copyBtn">
-                                <i class="fas fa-copy"></i>
-                            </button>
-
                         </div>
-
-
-                    <!-- Share Buttons -->
-                        <div class="share-buttons">
-
-                            <button class="share-btn whatsapp" data-type="whatsapp">
-                                <i class="fab fa-whatsapp"></i>
-                                واتساب
-                            </button>
-
-                            <button class="share-btn facebook" data-type="facebook">
-                                <i class="fab fa-facebook-f"></i>
-                                فيسبوك
-                            </button>
-
-                            <button class="share-btn telegram" data-type="telegram">
-                                <i class="fab fa-telegram-plane"></i>
-                                تيليجرام
-                            </button>
-
-                            <button class="share-btn native" id="nativeShare">
-                                <i class="fas fa-share"></i>
-                                مشاركة
-                            </button>
-
-                        </div>
-
-
-                        <!-- Status -->
-                        <div id="shareStatus" class="share-status"></div>
 
                     </div>
 
-                </section>
+
+                    <!-- PURCHASED COURSES -->
+                    <div class="profile-card">
+
+                        <div class="section-heading">
+                        <h2 class="heading-title">كورساتي</h2>
+                        </div>
+
+                        <div class="course-list">
+
+                            <a href="#" class="course-item">
+                                <i class="fas fa-book"></i>
+                                <span>اللغة العربية</span>
+                            </a>
+
+                            <a href="#" class="course-item">
+                                <i class="fas fa-globe"></i>
+                                <span>الجغرافيا</span>
+                            </a>
+
+                            <a href="#" class="course-item">
+                                <i class="fas fa-flask"></i>
+                                <span>الكيمياء</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- QUICK ACTIONS -->
+                    <div class="profile-card">
+
+                        <div class="section-heading">
+                        <h2 class="heading-title">ملحقات الPDF</h2>
+                        </div>
+
+                        <div class="profile-actions">
+
+                            <a href="#" class="profile-action">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>ملف PDF مادة الجغرافيا</span>
+                            </a>
+
+                            <a href="#" class="profile-action">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>ملف PDF مادة الرياضيات</span>
+                            </a>
+
+                            <a href="#" class="profile-action">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>ملف PDF مادة الفيزياء</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- QUICK ACTIONS -->
+                    <div class="profile-card">
+
+                        <div class="section-heading">
+                        <h2 class="heading-title">الإعدادات</h2>
+                        </div>
+
+                        <div class="profile-actions">
+
+                        <a href="edit-data.html" class="profile-action">
+                            <i class="fas fa-user-edit"></i>
+                            <span>تعديل البيانات</span>
+                        </a>
+
+                        <a href="change-password.html" class="profile-action">
+                            <i class="fas fa-lock"></i>
+                            <span>تغيير كلمة السر</span>
+                        </a>
+
+                        </div>
+
+                    </div>
+
+                    </section>
+
 
               <div class="footer-note">
                 - الطريق إلى اﻹمتحان مع راجع أونلاين -
@@ -237,7 +268,7 @@
             <span>الجداول الدراسية</span>
           </a>
 
-          <a href="../about-us/about-us.html" class="bottom-nav-link">
+          <a href="#" class="bottom-nav-link">
             <i class="fas fa-users nav-icon"></i>
             <span>من نحن</span>
           </a>
@@ -269,7 +300,7 @@
       <script src="https://unpkg.com/@panzoom/panzoom/dist/panzoom.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
       <!-- Page Script -->
-      <script src="../../js/about-us/share.js" defer></script>
+      <script src="../../js/user-profile/user-profile.js" defer></script>
     </div>
 
   </body>
