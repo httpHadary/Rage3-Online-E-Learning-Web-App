@@ -3,7 +3,7 @@
 =============================== */
 
 :root {
-  --main-teal: #3ba3b5;
+  --main-teal: #4BA3DB;
   --main-color: #005356;
   --dark-teal: #2d818f;
   --bg-white: #ffffff;
@@ -403,7 +403,7 @@ body.menu-active .side-menu {
 .btn-submit-code {
   width: 100%;
   margin-top: 15px;
-  background: linear-gradient(135deg, #3ba3b5, #3ba3b5);
+  background: linear-gradient(135deg, #4BA3DB, #4BA3DB);
   color: white;
   border: none;
   padding: 14px;
@@ -432,7 +432,7 @@ body.menu-active .side-menu {
 .btn-submit-code {
   width: 100%;
   margin-top: 15px;
-  background: linear-gradient(135deg,#3ba3b5,#3ba3b5);
+  background: linear-gradient(135deg,#4BA3DB,#4BA3DB);
   color: #fff;
   border: none;
   padding: 14px;
@@ -656,7 +656,7 @@ body.menu-active .side-menu {
 /* Video Icon */
 
 .lesson-icon.video {
-  background: linear-gradient(135deg, #3ba3b5, #2d818f);
+  background: linear-gradient(135deg, #4BA3DB, #2d818f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

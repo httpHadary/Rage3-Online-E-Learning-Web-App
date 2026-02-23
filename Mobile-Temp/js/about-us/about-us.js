@@ -112,4 +112,16 @@ $(function () {
   }, 1200); // slightly longer than page animation
 
 
+  /* ===============================
+   FAQ ACCORDION
+=============================== */
+
+$(".faq-question").on("click", function () {
+
+  const item = $(this).parent();
+
+  item.toggleClass("active");
+
+});
+
 });
